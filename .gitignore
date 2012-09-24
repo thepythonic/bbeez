@@ -1,0 +1,12 @@
+#python specific
+*.pyc
+*.db
+*.sqlite3
+media/uploads
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out

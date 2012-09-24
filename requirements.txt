@@ -1,0 +1,6 @@
+django-cms
+django-filer
+easy_thumbnails
+cmsplugin_filer
+pillow
+
