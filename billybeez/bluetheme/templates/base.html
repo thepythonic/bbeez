@@ -31,6 +31,8 @@
 
 <body>
 <div class="bg">
+  {% placeholder "header" or %}
+    {% show_placeholder "header" request.current_page.get_home_pk_cache %}
   <div class="container" style="height:115px;">
     <img id="logo" src="/static/images/logo.png" alt="">
     <div id="language"> 
@@ -43,7 +45,10 @@
         <a> Register</a>
       </div>
       <div id="myslidemenu" class="jqueryslidemenu">
+
           <ul>
+            {% show_menu 0 100 100 100 "menu.html" %}
+            <!--
             <li><a id="home" href="/" style="color: rgb(255, 255, 255); ">Home</a></li>
             <li><a>Plan Your Visit</a></li>
             <li><a>Playgrounds</a> </li>
@@ -58,10 +63,12 @@
             </li>
             <li><a id="gallery">Gallery</a></li>
             <li><a id="contact" href="http://billybeez.com/billybeezlocal/contact-us.php">Contact Us</a></li>
+            !-->
           </ul>
       </div>
     <img id="kidsarea" src="/static/images/kidsarea.png" alt="">
   </div>
+  {% endplaceholder %}
 </div>
 <script>
 $("document").ready(function(){
