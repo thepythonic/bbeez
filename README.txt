@@ -1,5 +1,15 @@
-1- pip install -r requirements.txt
+1 Install image library
+sudo apt-get build-dep python-imaging install python-dev libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev libjpeg8-dev install libjpeg62-dev
 
-sudo apt-get install python-dev libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev libjpeg8-dev
-sudo apt-get build-dep python-imaging
-sudo apt-get install libjpeg62-dev
+2- Install django-cms 
+pip install -r requirements.txt
+
+3- Create database
+python manage.py syncdb --all
+
+4- Fake migration
+python manage.py migrate --fake
+
+
+
+
