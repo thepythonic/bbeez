@@ -1,0 +1,2 @@
+CMS_SEO_FIELDS = True
+

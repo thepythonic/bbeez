@@ -129,8 +129,10 @@ INSTALLED_APPS = (
 
     'django.contrib.admin',
     
-    #'blackandwhite',
-    'bluetheme',
+    # our themes
+    'bstheme',
+    #'hfreesoftware',
+    #'bluetheme',
 
     'cms', 
     'mptt', 
@@ -157,12 +159,15 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
-
+    
+    #our Custom plugins
+    'cmsplugin_bootstrap_carousel',
+    'titledplugin',
 )
 
 CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
-    ('template_2.html', 'Template Two'),
+    ('1_column.html', 'Template One'),
+    ('2_columns.html', 'Template Two'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
@@ -205,7 +210,26 @@ LOGGING = {
     }
 }
 
+CMS_SEO_FIELDS = True
 
+CMS_PLACEHOLDER_CONF = {
+    'content_top': {
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
+        'text_only_plugins': ['LinkPlugin'],
+        'name':gettext("Content Top"),
+    },
+    'content_center': {
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
+        'text_only_plugins': ['LinkPlugin'],
+        'name':gettext("Content Bottom"),
+    },
+    'content_bottom': {
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
+        'text_only_plugins': ['LinkPlugin'],
+        'name':gettext("Content Bottom"),
+    },
+
+}
 
 try:
     from local_settings import *
