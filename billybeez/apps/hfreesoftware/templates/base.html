@@ -1,0 +1,97 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>{{ request.current_page.get_title }}</title>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+{% render_block "css" %}
+</head>
+<body>
+{% cms_toolbar %}
+
+<div id="main_container">
+	<div id="header">
+    <div class="logo">
+      {% placeholder "header" or %}
+      {% show_placeholder "header" request.current_page.get_home_pk_cache %}
+      {% endplaceholder %}
+    </div>
+  </div>
+  <div class="menu">
+  	<ul>                                                                         
+      {% show_menu 0 0 0 0 %}
+  	</ul>
+  </div>
+
+  {% block slider %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}static/js/jquery.cycle.all.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}static/js/superfish.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}static/js/script.js"></script>
+    <div id="slider">
+        <!-- start slideshow -->
+      <div id="slideshow">
+      {% placeholder "slider_images" or %}
+      {% endplaceholder %}
+      </div>
+      <!-- end #slideshow -->
+      <div class="controls-outer">
+        <div id="slide_controls">
+          <ul id="slider_nav">
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  <!--/slider -->
+  {% endblock %}
+
+  <div class="center_content">
+    {% block content %}
+      {% block main-content%}
+       	<div class="center_left">
+         	<div class="content" id="top">
+            {% placeholder "content-top" or %}
+            {% endplaceholder %}
+          </div>
+          <div class="content" id="left">
+            {% placeholder "content-left" or %}
+            {% endplaceholder %}
+          </div>
+          <div class="content" id="right">
+            {% placeholder "content-right" or %}
+            {% endplaceholder %}
+          </div>
+          <div class="content" id="bottom">
+            {% placeholder "content-bottom" or %}        
+            {% endplaceholder %}
+          </div>
+        </div> 
+      {% endblock main-content %}
+
+      {% block sidebar %}
+        <div class="center_right">
+        {% placeholder "sidebar" or %}
+        {% endplaceholder %}
+        </div>          
+        <div class="clear"></div>
+      {% endblock %} 
+
+    {% endblock content %} 
+  </div>    
+    
+  <div id="footer">                                              
+    <div class="left_footer">
+    {% placeholder "footer-links" or %}
+    {% endplaceholder %}
+    </div>
+    <div class="right_footer"><a href="http://csstemplatesmarket.com"  target="_blank"><img src="{{ STATIC_URL }}images/csstemplatesmarket.gif" border="0" alt="" title="" /></a>
+    </div>   
+  </div>
+</div>
+<!-- end of main_container -->
+
+{% render_block "js" %}
+</body>
+</html>

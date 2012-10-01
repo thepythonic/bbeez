@@ -1,0 +1,162 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+
+  {% render_block "css" %}
+  {% render_block "js" %}
+
+
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jqueryslidemenu.css" media="screen,all" id="noscript"/>
+  
+  <link href="/static/css/allinone_bannerWithPlaylist.css" rel="stylesheet" type="text/css">
+
+  <script src="{{ STATIC_URL }}js/jquery.min.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/jquery.mousewheel.min.js" type="text/javascript"></script>
+  <script src="{{ STATIC_URL }}js/allinone_bannerWithPlaylist.js" type="text/javascript"></script>
+
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jqueryslidemenu.js"></script>
+
+  <title>{{ request.current_page.get_title }}</title>
+
+</head>
+
+<body>
+  {% cms_toolbar %}
+
+<div class="bg">
+  {% placeholder "header" or %}
+    {% show_placeholder "header" request.current_page.get_home_pk_cache %}
+  <div class="container" style="height:115px;">
+    <img id="logo" src="/static/images/logo.png" alt="">
+    <div id="language"> 
+      <a style="font-weight:normal;"> عربي</a>  |
+      <a> English</a>
+    </div>
+    
+      <div id="login">  
+        <a> Login</a>  |
+        <a> Register</a>
+      </div>
+      <div id="myslidemenu" class="jqueryslidemenu">
+
+          <ul>
+            {% show_menu 0 100 100 100 "menu.html" %}
+          </ul>
+      </div>
+    <img id="kidsarea" src="/static/images/kidsarea.png" alt="">
+  </div>
+  {% endplaceholder %}
+</div>
+
+<div class="container" style="background:#fff;">
+
+  <!-- Index Slider -->
+  <div id="slider" style="padding: 25px 20px 15px 20px;">
+  {% placeholder "slider_images" or %}
+     <div id="allinone_bannerWithPlaylist_elegant"></div>
+  {% endplaceholder %}
+  </div>
+  <!--  End Index Slider -->
+    
+    <div class="section">
+    <div class="head">
+      <h1>Welcome To Billy Beez</h1>
+    </div>
+    <p>
+     bsdfbsdbsdbdsfbddb dbfbsdfbdfbdf dsfb bdsfbsdfb dfs bbdfbdsf bsdfbsdfbfsdbs  sdbfbdsfbdsfbdfb dbdsf bdsfbd f dfb dfbdfdfbdsb s dfbdfb dfbdfb
+     b df bdfbfd fsadfg awwergegerghrth
+      g egerererere e
+    </p>
+  </div>
+
+   <div class="content" id="bottom">
+      {% placeholder "content-bottom" or %}    
+        <table align="center" style="margin-bottom:55px;"><tbody><tr><td><img src="/static/images/separator_1.png" alt=""></td></tr></tbody></table>
+        <table>
+        <tbody><tr>
+          <td valign="top" class="section">
+            <div class="head">
+              <img style="position:absolute;width: 90px;margin-top: -63px;" src="/static/images/queen-bee.png" alt="">
+              <h2 style="margin-left: 105px;">Newsletter</h2>
+            </div>
+            <p>
+             bsdfbsdbsdbdsfbddb dbfbsdfbdfbdf dsfb bdsfbsdfb dfs bbdfbdsf bsdfbsdfbfsdbs  sdbfbdsfbdsfbdfb dbdsf bdsfbd f dfb dfbdfdfbdsb s dfbdfb dfbdfb
+             b df bdfbfd fsadfg awwergegerghrth
+              g egerererere e
+            </p>
+            <div id="subscribe">      
+              <form id="newsletterform" class="cmxform" method="post" action="" enctype="multipart/form-data">
+                <input id="email" name="email" class="email" value="Enter your Email">
+                <div name="submit" class="submit" onclick="newsletter()" value="">
+                  <img id="subs" src="/static/images/subscribe.png">
+                </div>
+              </form>
+            </div>
+          </td>
+          <td><img src="/static/images/separator_2.png" alt=""></td>
+          <td valign="top" class="section">
+            <div class="head">
+              <img style="position:absolute;width: 105px;margin-top: -50px;" src="/static/images/buzze-bee.png" alt="">
+              <h2 style="margin-left: 105px;">Book A Party</h2>
+            </div>
+            <p>
+             bsdfbsdbsdbdsfbddb dbfbsdfbdfbdf dsfb bdsfbsdfb dfs bbdfbdsf bsdfbsdfbfsdbs  sdbfbdsfbdsfbdfb dbdsf bdsfbd f dfb dfbdfdfbdsb s dfbdfb dfbdfb
+             b df bdfbfd fsadfg awwergegerghrth
+              g egerererere e
+            </p>
+          </td>
+          <td><img src="/static/images/separator_2.png" alt=""></td>
+          <td valign="top" class="section">
+            <div class="head">
+            <img style="position:absolute;width: 85px;margin-top: -61px;" src="/static/images/honey-bee.png" alt="">
+              <h2 style="margin-left: 105px;">Featured Games</h2>
+            </div>
+            <p>
+             bsdfbsdbsdbdsfbddb dbfbsdfbdfbdf dsfb bdsfbsdfb dfs bbdfbdsf bsdfbsdfbfsdbs  sdbfbdsfbdsfbdfb dbdsf bdsfbd f dfb dfbdfdfbdsb s dfbdfb dfbdfb
+             b df bdfbfd fsadfg awwergegerghrth
+              g egerererere e
+            </p>
+            <div id="download">
+              <h3>Download Billy Beez IOS Games</h3>
+              <a><img src="/static/images/download.png"></a>
+            </div>
+          </td></tr>
+        </tbody></table>
+      {% endplaceholder %}
+    </div>
+</div>
+
+<div class="bg">
+  
+  <div class="container" style="background: white;">
+    <table align="center"><tbody><tr><td style="padding:0px;"><img src="/static/images/separator_1.png" alt=""></td></tr></tbody></table>
+    <table align="center">
+    <tbody><tr>
+    <td><a>About Billy Beez</a></td><td>|</td>
+    <td><a>Terms &amp; Conditions</a></td><td>|</td>
+    <td><a>Privacy Policy</a></td><td>|</td>
+    <td><a>Site Map</a></td><td>|</td>
+    <td><a>Contact Us</a></td>
+    </tr>
+    </tbody></table>
+    <p id="copyright"> All rights reserved 2012 © Billy Beez</p>
+    <div id="social">Follow Us:
+      <a><img src="/static/images/facebook.png"></a>
+      <a><img src="/static/images/twitter.png"></a>
+      <a><img src="/static/images/youtube.png"></a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
