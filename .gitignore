@@ -2,6 +2,7 @@
 *.pyc
 *.db
 *.sqlite3
+local_settings.py
 media/uploads
 
 ## generic files to ignore
@@ -10,3 +11,5 @@ media/uploads
 *.DS_Store
 *.swp
 *.out
+
+
