@@ -167,7 +167,9 @@ INSTALLED_APPS = (
 
 CMS_TEMPLATES = (
     ('1_column.html', 'Template One'),
+    ('1_column_slider.html', 'Template One Slider'),
     ('2_columns.html', 'Template Two'),
+    ('2_columns_slider.html', 'Template Two Slider'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
@@ -221,7 +223,7 @@ CMS_PLACEHOLDER_CONF = {
     'content_center': {
         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
         'text_only_plugins': ['LinkPlugin'],
-        'name':gettext("Content Bottom"),
+        'name':gettext("Content Center"),
     },
     'content_bottom': {
         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],

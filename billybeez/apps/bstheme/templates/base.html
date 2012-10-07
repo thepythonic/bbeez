@@ -84,9 +84,11 @@
     {% endblock header %}
     
     {% block nav-menu %}
-    <ul class="nav nav-tabs">
-      {% show_menu 0 100 100 100 "menu.html" %}
-    </ul>
+    <div id="nav" class="offset3 span4">
+      <ul class="nav nav-pills">
+        {% show_menu 0 100 100 100 "menu.html" %}
+      </ul>
+    </div>
     {% endblock nav-menu %}
 
     <div class="container-fluid">
@@ -127,43 +129,17 @@
           </div>
           
           <div class="row-fluid">
-            {% placeholder 'content_center' or %}
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            {% endplaceholder %}
+            {% block content_center %}
+              {% placeholder 'content_center' or %}
+              {% endplaceholder %}
+            {% endblock content_center %}
           </div><!--/row-fluid-->
           
           <div class="row-fluid">
-            {% placeholder 'content_bottom' or %}
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            {% endplaceholder %}
+            {% block content_bottom %}
+              {% placeholder 'content_bottom' or %}
+              {% endplaceholder %}
+            {% endblock content_bottom %}
           </div><!--/row-fluid-->
         </div><!--/span-->
       </div><!--/row-fluid-->

@@ -4,10 +4,12 @@ sudo apt-get build-dep python-imaging install python-dev libjpeg8 libjpeg62-dev 
 2- Install django-cms 
 pip install -r requirements.txt
 
-3- Create database
+3- create new django project
+
+4- Create database
 python manage.py syncdb --all
 
-4- Fake migration
+5- Fake migration
 python manage.py migrate --fake
 
 
