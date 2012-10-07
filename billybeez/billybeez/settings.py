@@ -131,7 +131,6 @@ INSTALLED_APPS = (
     
     # our themes
     'bstheme',
-    #'hfreesoftware',
     #'bluetheme',
 
     'cms', 
