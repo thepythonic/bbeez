@@ -1,16 +1,1 @@
-/*##################################################|*/
-/* #CMS.SETUP# */
-(function namespacing() {
-	// insuring django namespace is available when using on admin
-	django = window.django || undefined;
-
-	// assigning correct jquery instance to jQuery variable
-	var jQuery = (django) ? django.jQuery : window.jQuery || undefined;
-
-	// assign global namespaces
-	window.CMS = {
-		'$': jQuery.noConflict(),
-		'Class': Class.$noConflict(),
-		'API': {}
-	};
-})();
+/home/hassan/.virtualenv/billy/local/lib/python2.7/site-packages/cms/static/cms/js/plugins/cms.setup.js

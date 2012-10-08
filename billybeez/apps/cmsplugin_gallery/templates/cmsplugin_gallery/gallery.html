@@ -1,19 +1,47 @@
-{% load thumbnail %}
+{% load thumbnail sekizai_tags %}
 
-<div class="gallery" id="cmspluginGallery{{ gallery.pk }}">
-	{% for image in images %}
-		<div>
-			<img src="{% thumbnail image.src 115x80 crop %}" alt="{{ image.alt }}" title="{{ image.title }}" rel="#cmspluginGalleryImage{{ image.pk }}" />
-		</div>
-	{% endfor %}
-</div>
-
-{% for image in images %}
-<div class="simple_overlay" id="cmspluginGalleryImage{{ image.pk }}">
-	<img src="{{ image.src.url }}" />
-</div>
-{% endfor %}
-
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cmsplugin_gallery/css/jquery.lightbox-0.5.css" media="screen" />{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_gallery/js/jquery.lightbox-0.5.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
 <script type="text/javascript">
-	jQuery('#cmspluginGallery{{ gallery.pk }} img').overlay();
+$(function() {
+    $('#gallery a').lightBox();
+});
 </script>
+{% endaddtoblock %}
+
+{% addtoblock "css" %}
+<style type="text/css">
+/* jQuery lightBox plugin - Gallery style */
+#gallery {
+	background-color: #fff;
+	padding: 10px;
+	width: 520px;
+}
+#gallery ul { list-style: none; }
+#gallery ul li { display: inline; }
+#gallery ul img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 20px;
+}
+#gallery ul a:hover img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 20px;
+	color: #fff;
+}
+#gallery ul a:hover { color: #fff; }
+</style>
+{% endaddtoblock %}
+
+<div id="gallery">
+    <ul>
+    {% for image in images %}
+		<li>
+            <a href="{{ image.src.url }}">
+                <img src="{% thumbnail image.src 115x80 crop %}" width="115" height="80" alt="{{ image.alt }}" />
+            </a>
+		</li>
+	{% endfor %}
+    </ul>
+</div>
+
