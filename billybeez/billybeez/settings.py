@@ -158,7 +158,9 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
-    
+
+    'cmsplugin_gallery',
+
     #our Custom plugins
     'cmsplugin_bootstrap_carousel',
     'titledplugin',
@@ -216,17 +218,14 @@ CMS_SEO_FIELDS = True
 CMS_PLACEHOLDER_CONF = {
     'content_top': {
         'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
-        'text_only_plugins': ['LinkPlugin'],
         'name':gettext("Content Top"),
     },
     'content_center': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
-        'text_only_plugins': ['LinkPlugin'],
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
         'name':gettext("Content Center"),
     },
     'content_bottom': {
         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
-        'text_only_plugins': ['LinkPlugin'],
         'name':gettext("Content Bottom"),
     },
 
