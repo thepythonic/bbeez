@@ -1,6 +1,7 @@
 import settings
 CMS_SEO_FIELDS = True
 
+
 if settings.DEBUG:
 	INTERNAL_IPS = ('127.0.0.1',)
 	settings.MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
