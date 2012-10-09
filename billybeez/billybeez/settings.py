@@ -164,6 +164,7 @@ INSTALLED_APPS = (
     #our Custom plugins
     'cmsplugin_bootstrap_carousel',
     'titledplugin',
+    'cmsplugin_gallery',
 )
 
 CMS_TEMPLATES = (
