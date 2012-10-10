@@ -16,6 +16,7 @@ ADMINS = (
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = ''
+# TODO YF change email settings
 EMAIL_HOST_USER = 'yomna.fahmy@scitecs.com'
 EMAIL_SUBJECT_PREFIX = 'billybeez - '
 EMAIL_USE_TLS = True
@@ -68,7 +69,7 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
-MEDIA_URL = '/media/    '
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -178,7 +179,7 @@ INSTALLED_APPS = (
 
     #our Custom plugins
     'cmsplugin_bootstrap_carousel',
-    'titledplugin',
+    'cmsplugin_titledplugin',
     'cmsplugin_contact',
 )
 
