@@ -23,7 +23,7 @@ class ContactPlugin(CMSPluginBase):
     
     fieldsets = (
         (None, {
-            'fields': ('site_email', 'email_label', 'subject_label', 'content_label', 'thanks', 'submit'),
+            'fields': ('site_email', 'name_label', 'email_label', 'mobile_label', 'subject_label', 'content_label', 'thanks', 'submit'),
         }),
         (_('Spam Protection'), {
             'fields': ('spam_protection_method', 'akismet_api_key', 'recaptcha_public_key', 'recaptcha_private_key', 'recaptcha_theme')
