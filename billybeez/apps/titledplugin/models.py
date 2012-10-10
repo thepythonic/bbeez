@@ -7,6 +7,8 @@ from django.utils.html import strip_tags
 from django.utils.text import truncate_words
 from django.utils.translation import ugettext_lazy as _
 
+from custom_utils.models import VariableWidth
+
 _old_tree_cache = {}
 
 class AbstractText(CMSPlugin):
@@ -48,7 +50,7 @@ class AbstractText(CMSPlugin):
 		self.body = replace_plugin_tags(old_instance.get_plugin_instance()[0].body, replace_ids)
 		self.save()
             
-class TitledPlugin(AbstractText):
+class TitledPlugin(AbstractText, VariableWidth):
 	""" Text plugin Class with a title field """
 	title = models.CharField(max_length=50, default='Title')
 	

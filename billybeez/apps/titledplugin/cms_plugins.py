@@ -41,6 +41,7 @@ class TitledPlugin(CMSPluginBase):
 
 	def render(self, context, instance, placeholder):
 		context.update({
+			'span': instance.span,
 			'title': instance.title,
 			'body': plugin_tags_to_user_html(instance.body, context, placeholder), 
 			'placeholder': placeholder,

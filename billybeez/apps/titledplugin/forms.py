@@ -9,4 +9,4 @@ class TitledPluginForm(ModelForm):
 	class Meta:
 		model = TitledPlugin
 		exclude = ('page', 'position', 'placeholder', 'language', 'plugin_type')
-		fields = ('title', 'body')
+		fields = ('span', 'title', 'body')
