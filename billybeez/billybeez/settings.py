@@ -20,6 +20,13 @@ EMAIL_HOST_USER = 'yomna.fahmy@scitecs.com'
 EMAIL_SUBJECT_PREFIX = 'billybeez - '
 EMAIL_USE_TLS = True
 
+SUBJECT_CHOICHES = (
+    ('-Choose-', '-Choose-'),
+    ('Question', 'Question'),
+    ('Business proposal', 'Business proposal'),
+    ('Advertising', 'Advertising'),
+    ('Complaint', 'Complaint'),
+)
 
 MANAGERS = ADMINS
 

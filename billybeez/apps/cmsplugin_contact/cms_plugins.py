@@ -105,7 +105,9 @@ class ContactPlugin(CMSPluginBase):
             # The body text. This should be a plain text message.
             render_to_string(self.email_template, {
                 'data': form.cleaned_data,
-                'user_email': form.cleaned_data['email']
+                'user_name': form.cleaned_data['name'],
+                'user_email': form.cleaned_data['email'],
+                'user_mobile': form.cleaned_data['mobile']
             }),
             # from_email: The sender's address. Both fred@example.com and Fred <fred@example.com> 
             # forms are legal. If omitted, the DEFAULT_FROM_EMAIL setting is used.

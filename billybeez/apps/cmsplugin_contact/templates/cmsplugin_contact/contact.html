@@ -2,8 +2,24 @@
 
 {% if form %}
 	<form action="." method="post">
+	<table><tr><td>
+		<p{% if form.name.errors %} class="error"{% endif %}>
+			<label class="contact_field">{{ contact.name_label }}</label>
+		</td>
+		<td>
+				{{ form.name }}
+			{% if form.name.errors %}
+				{% for error in form.name.errors %}
+					<span class="error_msg">{{ error }}</span>
+				{% endfor %}
+			{% endif %}
+		</p>
+		</td></tr>
+		<tr><td>
 		<p{% if form.email.errors %} class="error"{% endif %}>
 			<label class="contact_field">{{ contact.email_label }}</label>
+		</td>
+		<td>
 				{{ form.email }}
 			{% if form.email.errors %}
 				{% for error in form.email.errors %}
@@ -11,8 +27,25 @@
 				{% endfor %}
 			{% endif %}
 		</p>
+		</td></tr>
+		<tr><td>
+		<p{% if form.mobile.errors %} class="error"{% endif %}>
+			<label class="contact_field">{{ contact.mobile_label }}</label>
+		</td>
+		<td>
+				{{ form.mobile }}
+			{% if form.mobile.errors %}
+				{% for error in form.mobile.errors %}
+					<span class="error_msg">{{ error }}</span>
+				{% endfor %}
+			{% endif %}
+		</p>
+		</td></tr>
+		<tr><td>
 		<p{% if form.subject.errors %} class="error"{% endif %}>
 			<label class="contact_field">{{ contact.subject_label }}</label>
+		</td>
+		<td>
 				{{ form.subject }}
 			{% if form.subject.errors %}
 				{% for error in form.subject.errors %}
@@ -20,8 +53,12 @@
 				{% endfor %}
 			{% endif %}
 		</p>
+		</td></tr>
+		<tr><td>
 		<p{% if form.content.errors %} class="error"{% endif %}>
 			<label class="contact_field">{{ contact.content_label }}</label>
+		</td>
+		<td>
 				{{ form.content }}
 			{% if form.content.errors %}
 				{% for error in form.content.errors %}
@@ -67,8 +104,10 @@
 		{% if form.accept_terms %}
 			{{ form.accept_terms }}
 		{% endif %}
+	</table>
 		<p>
 			<input type="submit"{% if contact.submit %} value="{{ contact.submit }}"{% endif %} />
+			<input type="reset"{% if contact.reset %} value="{{ contact.reset }}"{% endif %} />
 		</p>
 		
 		{% csrf_token %}

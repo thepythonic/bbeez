@@ -1,10 +1,13 @@
 from django import forms
 #import settings
+from django.conf import settings
 from cmsplugin_contact.nospam.forms import HoneyPotForm, RecaptchaForm, AkismetForm
   
 class ContactForm(forms.Form):
+    name = forms.CharField()
     email = forms.EmailField()
-    subject = forms.CharField(required=False)
+    mobile = forms.CharField()
+    subject = forms.ChoiceField(choices=settings.SUBJECT_CHOICHES)
     content = forms.CharField(widget=forms.Textarea())
 
   
