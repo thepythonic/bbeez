@@ -215,21 +215,21 @@ LOGGING = {
 
 CMS_SEO_FIELDS = True
 
-CMS_PLACEHOLDER_CONF = {
-    'content_top': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
-        'name':gettext("Content Top"),
-    },
-    'content_center': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
-        'name':gettext("Content Center"),
-    },
-    'content_bottom': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
-        'name':gettext("Content Bottom"),
-    },
+# CMS_PLACEHOLDER_CONF = {
+#     'content_top': {
+#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
+#         'name':gettext("Content Top"),
+#     },
+#     'content_center': {
+#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+#         'name':gettext("Content Center"),
+#     },
+#     'content_bottom': {
+#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
+#         'name':gettext("Content Bottom"),
+#     },
 
-}
+# }
 
 try:
     from local_settings import *
