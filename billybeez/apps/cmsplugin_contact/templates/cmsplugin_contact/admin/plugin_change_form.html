@@ -1,0 +1,66 @@
+{% extends "admin/cms/page/plugin_change_form.html" %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript">
+//<![CDATA[
+(function($) {
+	function updateVisibility(class_prefix) {
+		$('div.spam_protection_method').parent().children('.form-row').each(function(index, row) {
+			var visible = false;
+			$.each($(row).attr('class').split(/\s+/), function(index, klass) {
+				if (klass == 'spam_protection_method' || (klass.indexOf(class_prefix) >= 0
+					{% if recaptcha_settings %} && klass.indexOf("recaptcha_public_key") < 0 && klass.indexOf("recaptcha_private_key") < 0{% endif %}
+					{% if akismet_settings %} && klass.indexOf("akismet_api_key") < 0{% endif %})) {
+					visible = true;
+				}
+			});
+			if (visible) {
+				$(row).css('display', 'block');
+			} else {
+				$(row).css('display', 'none');
+			}
+		});
+	}
+	
+	$(document).ready(function(){
+		
+		$('#id_spam_protection_method').change(function() {
+			var curOption = $('#id_spam_protection_method :selected');
+			updateVisibility(curOption.html().toLowerCase());
+		});
+	});
+})(jQuery);
+//]]>
+</script>
+
+{% endblock extrahead %}
+
+{% block extrastyle %}{{ block.super }}
+<style type="text/css">
+	div.form-row label {
+		width: 14em;
+	}
+	form .aligned p.help {
+		padding-left: 48px;
+		margin-left: 13em;
+	}
+	
+	{% if spam_protection_method != 1 or akismet_settings %}
+	div.form-row.akismet_api_key {
+		display: none;
+	}
+	{% endif %}
+
+	{% if spam_protection_method != 2 or recaptcha_settings %}
+	div.form-row.recaptcha_public_key {
+		display: none;
+	}
+	div.form-row.recaptcha_private_key {
+		display: none;
+	}
+	div.form-row.recaptcha_theme {
+		display: none;
+	}
+	{% endif %}
+</style>
+{% endblock extrastyle %}

@@ -13,6 +13,14 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'yomna.fahmy@scitecs.com'
+EMAIL_SUBJECT_PREFIX = 'billybeez - '
+EMAIL_USE_TLS = True
+
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -164,6 +172,7 @@ INSTALLED_APPS = (
     #our Custom plugins
     'cmsplugin_bootstrap_carousel',
     'titledplugin',
+    'cmsplugin_contact',
 )
 
 CMS_TEMPLATES = (
@@ -225,7 +234,7 @@ CMS_PLACEHOLDER_CONF = {
         'name':gettext("Content Center"),
     },
     'content_bottom': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
         'name':gettext("Content Bottom"),
     },
 
