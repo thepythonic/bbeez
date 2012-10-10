@@ -12,9 +12,10 @@ class Migration(SchemaMigration):
         db.create_table('cmsplugin_titledplugin', (
             ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('body', self.gf('django.db.models.fields.TextField')()),
+            ('span', self.gf('django.db.models.fields.CharField')(default='Width', max_length=50)),
             ('title', self.gf('django.db.models.fields.CharField')(default='Title', max_length=50)),
         ))
-        db.send_create_signal('titledplugin', ['TitledPlugin'])
+        db.send_create_signal('cmsplugin_titledplugin', ['TitledPlugin'])
 
 
     def backwards(self, orm):
@@ -44,12 +45,13 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'})
         },
-        'titledplugin.titledplugin': {
+        'cmsplugin_titledplugin.titledplugin': {
             'Meta': {'object_name': 'TitledPlugin', 'db_table': "'cmsplugin_titledplugin'"},
             'body': ('django.db.models.fields.TextField', [], {}),
             'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            'span': ('django.db.models.fields.CharField', [], {'default': "'Width'", 'max_length': '50'}),
             'title': ('django.db.models.fields.CharField', [], {'default': "'Title'", 'max_length': '50'})
         }
     }
 
-    complete_apps = ['titledplugin']
+    complete_apps = ['cmsplugin_titledplugin']

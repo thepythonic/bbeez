@@ -1,13 +1,16 @@
+from django.conf import settings
+from django.forms.fields import CharField
+from django.utils.translation import ugettext_lazy as _
+
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
-from django.utils.translation import ugettext_lazy as _
-from models import TitledPlugin
-from titledplugin.forms import TitledPluginForm
-from titledplugin.widgets.wymeditor_widget import WYMEditor
-from titledplugin.utils import plugin_tags_to_user_html
-from django.forms.fields import CharField
-from titledplugin.settings import USE_TINYMCE
-from django.conf import settings
+from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
+from cms.plugins.text.utils import plugin_tags_to_user_html
+
+from cmsplugin_titledplugin.models import TitledPlugin
+from cmsplugin_titledplugin.forms import TitledPluginForm
+from cmsplugin_titledplugin.settings import USE_TINYMCE
+
 
 class TitledPlugin(CMSPluginBase):
 	model = TitledPlugin
@@ -41,6 +44,7 @@ class TitledPlugin(CMSPluginBase):
 
 	def render(self, context, instance, placeholder):
 		context.update({
+			'span': instance.span,
 			'title': instance.title,
 			'body': plugin_tags_to_user_html(instance.body, context, placeholder), 
 			'placeholder': placeholder,
