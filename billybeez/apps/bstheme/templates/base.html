@@ -11,7 +11,10 @@
     
     {% block styles %}
     <!-- Le styles -->
-    <link href="./static/css/bootstrap.css" rel="stylesheet">
+
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+    
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -22,8 +25,13 @@
       }
       .left{ float:left;}
       .right{ float:right;}
+      img.left{margin: 10px 20px 0 0;}
+      img.right{margin: 10px 0 0 20px;}
+      .text-plugin{margin-left:0;}
+      .row-fluid [class*="span"]:first-child {
+        margin-left: 2.564102564102564%;
+        }
     </style>
-    <link href="./static/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
