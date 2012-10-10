@@ -13,6 +13,22 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = ''
+# TODO YF change email settings
+EMAIL_HOST_USER = 'yomna.fahmy@scitecs.com'
+EMAIL_SUBJECT_PREFIX = 'billybeez - '
+EMAIL_USE_TLS = True
+
+SUBJECT_CHOICHES = (
+    ('-Choose-', '-Choose-'),
+    ('Question', 'Question'),
+    ('Business proposal', 'Business proposal'),
+    ('Advertising', 'Advertising'),
+    ('Complaint', 'Complaint'),
+)
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -53,7 +69,7 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
-MEDIA_URL = '/media/    '
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -163,7 +179,8 @@ INSTALLED_APPS = (
 
     #our Custom plugins
     'cmsplugin_bootstrap_carousel',
-    'titledplugin',
+    'cmsplugin_titledplugin',
+    'cmsplugin_contact',
 )
 
 CMS_TEMPLATES = (
@@ -215,21 +232,21 @@ LOGGING = {
 
 CMS_SEO_FIELDS = True
 
-# CMS_PLACEHOLDER_CONF = {
-#     'content_top': {
-#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
-#         'name':gettext("Content Top"),
-#     },
-#     'content_center': {
-#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
-#         'name':gettext("Content Center"),
-#     },
-#     'content_bottom': {
-#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin'],
-#         'name':gettext("Content Bottom"),
-#     },
+CMS_PLACEHOLDER_CONF = {
+    'content_top': {
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
+        'name':gettext("Content Top"),
+    },
+    'content_center': {
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+        'name':gettext("Content Center"),
+    },
+    'content_bottom': {
+        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
+        'name':gettext("Content Bottom"),
+    },
 
-# }
+}
 
 try:
     from local_settings import *
