@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
+    (r'^polls/', include('bakly_plugin.urls')),
     url(r'^', include('cms.urls')),
     (r'^tinymce/', include('tinymce.urls')),
 )
