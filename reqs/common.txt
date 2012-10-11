@@ -3,5 +3,5 @@ django-filer
 easy_thumbnails
 cmsplugin_filer
 pillow
-
+django-inline-ordering
 django-tinymce

@@ -181,6 +181,7 @@ INSTALLED_APPS = (
     'cmsplugin_bootstrap_carousel',
     'cmsplugin_titledplugin',
     'cmsplugin_contact',
+    'bakly_plugin',
 )
 
 CMS_TEMPLATES = (
