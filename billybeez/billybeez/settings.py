@@ -165,6 +165,8 @@ INSTALLED_APPS = (
     'cms.plugins.text',
   #  'cms.plugins.video',
     'cms.plugins.twitter',
+    
+    'cmsplugin_text_variable_width',
 
     'easy_thumbnails',
 
@@ -232,21 +234,20 @@ LOGGING = {
 
 CMS_SEO_FIELDS = True
 
-CMS_PLACEHOLDER_CONF = {
-    'content_top': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
-        'name':gettext("Content Top"),
-    },
-    'content_center': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
-        'name':gettext("Content Center"),
-    },
-    'content_bottom': {
-        'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
-        'name':gettext("Content Bottom"),
-    },
-
-}
+# CMS_PLACEHOLDER_CONF = {
+#     'content_top': {
+#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'CarouselPlugin'],
+#         'name':gettext("Content Top"),
+#     },
+#     'content_center': {
+#         'plugins': ['TextPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+#         'name':gettext("Content Center"),
+#     },
+#     'content_bottom': {
+#         'plugins': ['TextPluginPlugin', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
+#         'name':gettext("Content Bottom"),
+#     },
+# }
 
 try:
     from local_settings import *
