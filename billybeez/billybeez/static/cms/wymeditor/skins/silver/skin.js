@@ -1,1 +1,1 @@
-/home/hassan/.virtualenv/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/skins/silver/skin.js
+/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/skins/silver/skin.js

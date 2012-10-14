@@ -46,6 +46,7 @@ class TitledPlugin(CMSPluginBase):
 		context.update({
 			'span': instance.span,
 			'title': instance.title,
+			'font': instance.font,
 			'body': plugin_tags_to_user_html(instance.body, context, placeholder), 
 			'placeholder': placeholder,
 			'object': instance

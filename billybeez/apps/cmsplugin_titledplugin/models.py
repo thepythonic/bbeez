@@ -12,9 +12,16 @@ from custom_utils.models import VariableWidth
 
 _old_tree_cache = {}
 
+FONT = (
+		("", _("--select--")),
+		("h1", "Main Site Title"),
+		("h2", "Secondary Site Title"),
+		)
+
 class TitledPlugin(AbstractText, VariableWidth):
 	""" Text plugin Class with a title field """
 	title = models.CharField(max_length=50, default='Title')
+	font = models.CharField(max_length=50, default='Title Font', choices=FONT)
 	
 	def __unicode__(self):
 		return u"%s" % (truncate_words(strip_tags(self.title), 3)[:30]+"...")

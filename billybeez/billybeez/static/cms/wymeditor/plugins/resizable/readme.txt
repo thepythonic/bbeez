@@ -1,1 +1,1 @@
-/home/hassan/.virtualenv/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/plugins/resizable/readme.txt
+/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/plugins/resizable/readme.txt

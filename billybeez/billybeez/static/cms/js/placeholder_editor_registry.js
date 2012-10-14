@@ -1,1 +1,1 @@
-/home/hassan/.virtualenv/billy/local/lib/python2.7/site-packages/cms/static/cms/js/placeholder_editor_registry.js
+/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/js/placeholder_editor_registry.js
