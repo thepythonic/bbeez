@@ -53,7 +53,7 @@ LANGUAGES = [
     ('ar', 'Arabic'),
 ]
 
-SITE_ID = 1
+#SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -109,12 +109,17 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    
+    'multihost.middleware.MultiHostMiddleware',
 
     'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
+
 )
+MULTIHOST_AUTO_WWW = False
+MULTIHOST_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'billybeez.urls'
 
@@ -186,10 +191,7 @@ INSTALLED_APPS = (
 )
 
 CMS_TEMPLATES = (
-    ('1_column.html', 'Template One'),
-    ('1_column_slider.html', 'Template One Slider'),
-    ('2_columns.html', 'Template Two'),
-    ('2_columns_slider.html', 'Template Two Slider'),
+    ('home.html', 'Home'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
