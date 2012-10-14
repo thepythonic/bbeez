@@ -2,7 +2,9 @@
 
 {% load cms_tags %}
 
-  <ul class="thumbnails">
-    {% placeholder 'content_bottom' or %}
-    {% endplaceholder %}
-  </ul>
+
+{% block content_b %}
+ <ul class="thumbnails">
+  {% placeholder 'content_bottom' %}
+ </ul>
+{% endblock %}

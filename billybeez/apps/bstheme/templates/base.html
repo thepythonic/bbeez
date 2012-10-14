@@ -128,30 +128,17 @@
           </div><!--/.well -->
         </div><!--/span-->
         {% endblock sidebar %}
-        {% block content %}        
+
+               
         <div class="{% block content_width %}span9{% endblock content_width %}">
-          <div class="row-fluid">
-          {% placeholder 'content_top' or %}
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-          {% endplaceholder %}
-          </div>
+          {% block content %} 
           
-          <div class="row-fluid">
-              {% placeholder 'content_center' or %}
-              {% endplaceholder %}
-          </div><!--/row-fluid-->
-          
-          <div class="row-fluid">
-              {% placeholder 'content_bottom' or %}
-              {% endplaceholder %}
-          </div><!--/row-fluid-->
+          {% endblock content %}
         </div><!--/span-->
       </div><!--/row-fluid-->
         
       <hr>
-      {% endblock content %}
+      
       
       {% block footer %}        
       <footer>
