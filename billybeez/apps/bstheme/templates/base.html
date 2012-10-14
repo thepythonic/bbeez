@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
     <title>{% page_attribute page_title %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="{% page_attribute meta_description %}"/>
     <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,13 @@
     
     {% block styles %}
     <!-- Le styles -->
-    <link href="/static/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
     
+    <link href="/static/css/styles.css" rel="stylesheet">
 
     <style type="text/css">
-      body {
+      /*body {
         padding-top: 60px;
         padding-bottom: 40px;
       }
@@ -31,6 +32,11 @@
       .row-fluid [class*="span"]:first-child {
         margin-left: 2.564102564102564%;
         }
+      .title-plugin img{
+        height:100px;
+        width: 100px;
+        margin-top: -110px;
+      }*/
     </style>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -74,78 +80,53 @@
 
   <body>
     {% block header %}
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Project name</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
-          </div><!--/.nav-collapse -->
+      <div class="bg">
+        <div class="container" style="margin-bottom: 23px;">
+          <img id="logo"src="{{ STATIC_URL }}img/logo.png" alt=""/>
+          <div id="language" class="header">  
+              <a style="font-weight:normal;"> عربي</a>  |
+              <a> English</a>
+          </div>
+          {% block nav-menu %}
+          <div class="navbar">
+            <ul class="nav" style="margin:80px 0px 0px 0px;">
+                {% show_menu 0 100 100 100 "menu.html" %}
+              </ul>
+          </div>
+          {% endblock nav-menu %}
+          <img id="kidsarea" src="{{ STATIC_URL }}img/kidsarea.png" alt=""/>
         </div>
       </div>
-    </div>
     {% endblock header %}
     
-    {% block nav-menu %}
-    <div id="nav" class="offset3 span4">
-      <ul class="nav nav-pills">
-        {% show_menu 0 100 100 100 "menu.html" %}
-      </ul>
-    </div>
-    {% endblock nav-menu %}
-
-    <div class="container-fluid">
-      
-      <div class="row-fluid">
-        {% block sidebar %}
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        {% endblock sidebar %}
-
-               
-        <div class="{% block content_width %}span9{% endblock content_width %}">
-          {% block content %} 
-          
+    <div class="container" style="background:#fff;">
+          {% block content %}
           {% endblock content %}
-        </div><!--/span-->
-      </div><!--/row-fluid-->
-        
-      <hr>
-      
-      
-      {% block footer %}        
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-      {% endblock footer %}
-    </div><!--/.fluid-container-fluid-->
-   
+    </div>  
+    {% block footer %}  
+      <div class="bg">
+        <div class="container" id="footer" style="background: white;">
+            <img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
+            <table align="center">
+              <tr>
+              <td><a href="">About Billy Beez</a></td><td>|</td>
+              <td><a href="">Terms &amp; Conditions</a></td><td>|</td>
+              <td><a href="">Privacy Policy</a></td><td>|</td>
+              <td><a href="">Site Map</a></td><td>|</td>
+              <td><a href="">Contact Us</a></td>
+              </tr>
+            </table>
+            <p> All rights reserved 2012  Billy Beez</p>
+            <div class="offset9">
+            <p style="text-align:left;">Follow Us:</p>
+              <a href=""><img class="social" src="{{ STATIC_URL }}img/facebook.png"/></a>
+              <a href=""><img class="social" src="{{ STATIC_URL }}img/twitter.png"/></a>
+              <a href=""><img class="social"src="{{ STATIC_URL }}img/youtube.png"/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock footer %}
+
   </body>
 </html>
