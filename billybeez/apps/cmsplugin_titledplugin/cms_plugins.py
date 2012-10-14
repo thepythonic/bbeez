@@ -16,8 +16,8 @@ class TitledPlugin(CMSPluginBase):
 	model = TitledPlugin
 	name = _("Titled Plugin")
 	form = TitledPluginForm
-	render_template = "titledplugin/titledplugin.html"
-	change_form_template = "titledplugin/titledplugin_change_form.html"	
+	render_template = "cmsplugin_titledplugin/titledplugin.html"
+	change_form_template = "cmsplugin_titledplugin/titledplugin_change_form.html"	
 
 	def get_editor_widget(self, request, plugins):
 		""" Returns the Django form Widget to be used for the titled plugin """

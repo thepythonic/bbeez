@@ -10,7 +10,7 @@ from cmsplugin_text_variable_width.forms import TextVariableWidthForm
 
 class CMSTextVariableWidth(TextPlugin):
 	model = TextVariableWidth
-	name = _("TextVariableWidth")
+	name = _("Text Variable Width")
 	form = TextVariableWidthForm
 	
 	render_template = "cmsplugin_text_variable_width/text.html"
