@@ -110,7 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     
-    'multihost.middleware.MultiHostMiddleware',
+    #'multihost.middleware.MultiHostMiddleware',
 
     'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -188,6 +188,7 @@ INSTALLED_APPS = (
     'cmsplugin_bootstrap_carousel',
     'cmsplugin_titledplugin',
     'cmsplugin_contact',
+    'cmsplugin_billybeezgames',
 )
 
 CMS_TEMPLATES = (
@@ -236,20 +237,20 @@ LOGGING = {
 
 CMS_SEO_FIELDS = True
 
-CMS_PLACEHOLDER_CONF = {
-    'content_top': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin'],
-        'name':gettext("Content Top"),
-    },
-    'content_center': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
-        'name':gettext("Content Center"),
-    },
-    'content_bottom': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
-        'name':gettext("Content Bottom"),
-    },
-}
+# CMS_PLACEHOLDER_CONF = {
+#     'content_top': {
+#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin'],
+#         'name':gettext("Content Top"),
+#     },
+#     'content_center': {
+#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+#         'name':gettext("Content Center"),
+#     },
+#     'content_bottom': {
+#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
+#         'name':gettext("Content Bottom"),
+#     },
+# }
 
 try:
     from local_settings import *
