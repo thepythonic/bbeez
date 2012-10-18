@@ -4,17 +4,21 @@ from django.utils.translation import ugettext_lazy as _
 
 from cmsplugin_billybeezgames.models import BillybeezGame
 
+
 class BillybeezGamePlugin(CMSPluginBase):
     model = BillybeezGame
     name = _("Billy Beez Game Plugin")
+   
     render_template = "billybeezgames.html"
 
     def render(self, context, instance, placeholder):
     	print instance.gallery_plugin
     	print instance.titiled_plugin
+        print instance.image_plugin
     	context.update({
 			'titled': instance.titiled_plugin,
 			'gallery': instance.gallery_plugin,
+            'image': instance.image_plugin,
 			'placeholder': placeholder,
 			'object': instance
 		})

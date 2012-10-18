@@ -1,7 +1,8 @@
 from inline_ordering.admin import OrderableStackedInline
 import forms
 import models
-
+from django.contrib import admin
+from cmsplugin_gallery.models import GalleryPlugin 
 
 class ImageInline(OrderableStackedInline):
 
@@ -14,3 +15,9 @@ class ImageInline(OrderableStackedInline):
             return db_field.formfield(**kwargs)
         return super(ImageInline, self).\
             formfield_for_dbfield(db_field, **kwargs)
+
+
+class GalleryAdmin(admin.ModelAdmin):
+	inlines=[ImageInline,]
+
+admin.site.register(GalleryPlugin, GalleryAdmin)

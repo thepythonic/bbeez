@@ -1,7 +1,26 @@
-<div>
-{{ titled }}
-</div>
+{% load thumbnail sekizai_tags %}
+<div class='row-fluid'>
+	<div class='span4'>
+		<img src='{{ image.url }}' width="80" height="80" />
+	</div>
+	<div class='span4'>
+		{{ titled.title }}
+		<br/>
+		{{ titled.body|safe }}
+	</div>
 
-<div>
-{{ gallery }}
+	<div class='span4' >
+		{% include  "cmsplugin_gallery/gallery.html" with images=gallery.image_set.all %}
+
+		<!--
+	    <ul>
+	    {% for img in gallery.image_set.all %}
+			<li>
+	            <a href="{{ img.src.url }}">
+	                <img src="{% thumbnail img.src 115x80 crop %}" width="115" height="80" alt="{{ img.alt }}" />
+	            </a>
+			</li>
+		{% endfor %}
+	    </ul>-->
+</div>
 </div>

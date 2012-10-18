@@ -14,6 +14,7 @@ TEMPLATE_CHOICES = localdata.TEMPLATE_CHOICES
 
 
 class GalleryPlugin(CMSPlugin):
+    name= models.CharField(max_length=100)
 
     def copy_relations(self, oldinstance):
         for img in oldinstance.image_set.all():
@@ -30,7 +31,7 @@ class GalleryPlugin(CMSPlugin):
                                 editable=len(TEMPLATE_CHOICES) > 1)
 
     def __unicode__(self):
-        return _(u'%(count)d image(s) in gallery') % {'count': self.image_set.count()}
+        return  _( u'%s  %d image(s) in gallery') % ( self.name, self.image_set.count() )
 
 
 class Image(Orderable):
