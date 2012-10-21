@@ -29,6 +29,11 @@ SUBJECT_CHOICHES = (
     ('Complaint', 'Complaint'),
 )
 
+WRAPPER_PLUGIN_TEMPLATES = (
+    ('default.html', 'default'),
+    ('template_1.txt', 'template_1'),
+)
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -138,6 +143,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
+    'cmsplugin_wrapper.context_processors.cmsplugin_wrapper',
 )
 
 INSTALLED_APPS = (
@@ -188,6 +194,11 @@ INSTALLED_APPS = (
     'cmsplugin_bootstrap_carousel',
     'cmsplugin_titledplugin',
     'cmsplugin_contact',
+    'cmsplugin_wrapper',
+)
+
+CMS_PLUGIN_PROCESSORS = (
+    'cmsplugin_wrapper.plugin_processors.wrap_plugin',
 )
 
 CMS_TEMPLATES = (
@@ -238,7 +249,7 @@ CMS_SEO_FIELDS = True
 
 CMS_PLACEHOLDER_CONF = {
     'content_top': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
         'name':gettext("Content Top"),
     },
     'content_center': {
