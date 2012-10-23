@@ -48,5 +48,4 @@ def wrap_plugin(instance, placeholder, rendered_content, original_context):
             return template.render(context)
 
     # for plugins outside the WrapperPlugin - regular
-    else:
-        return rendered_content
+    return rendered_content
