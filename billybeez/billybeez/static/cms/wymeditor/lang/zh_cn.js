@@ -1,1 +1,1 @@
-/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/lang/zh_cn.js
+/home/dalia/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/lang/zh_cn.js

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+{% block content %}
+
+<h4>My Entries</h4>
+{% for entry in entries %}
+    <div class="entry">
+    {{ entry.title}}<br />
+  Created by : {{ entry.creator }} <br />
+    {{ entry.body }}<br />
+    </div>
+{% endfor %} <br />
+
+{% endblock content %}

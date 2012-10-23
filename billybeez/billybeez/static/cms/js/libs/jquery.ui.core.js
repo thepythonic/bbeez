@@ -1,1 +1,1 @@
-/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/js/libs/jquery.ui.core.js
+/home/dalia/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/js/libs/jquery.ui.core.js

@@ -1,1 +1,1 @@
-/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js
+/home/dalia/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js

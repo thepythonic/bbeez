@@ -195,6 +195,7 @@ INSTALLED_APPS = (
     'cmsplugin_titledplugin',
     'cmsplugin_contact',
     'cmsplugin_wrapper',
+    'custom_calendar',
 )
 
 CMS_PLUGIN_PROCESSORS = (

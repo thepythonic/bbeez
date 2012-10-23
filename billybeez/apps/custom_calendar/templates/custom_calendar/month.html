@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endblock styles %}
+
+
+{% block content %}
+<div id='calendar'>
+    <div id='cal_controls'>
+        <a id='prev'  href="{% url custom_calendar.views.main year|add:'-3' %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
+        <a id='next'  href="{% url custom_calendar.views.main year|add:'3' %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-next.gif'/></a>
+    </div>
+
+    <h2>{{ mname }} {{ year }}</h2>
+
+    <div class="month-inner">
+        <table>
+
+        <tr>
+            <td class="empty">Mon</td>
+            <td class="empty">Tue</td>
+            <td class="empty">Wed</td>
+            <td class="empty">Thu</td>
+            <td class="empty">Fri</td>
+            <td class="empty">Sat</td>
+            <td class="empty">Sun</td>
+        </tr>
+
+        {% for week in month_days %}
+            <tr>
+            {% for day, entries, current in week %}
+
+                <!-- TD style: empty | day | current; onClick handler and highlight  -->
+                <td class= {% if day == 0 %}"empty"{% endif %}
+                {% if day != 0 and not current %}"day"{% endif %}
+                {% if day != 0 and current %}"current_day"{% endif %}
+                {% if day != 0 %}
+                    onClick="parent.location='{% url custom_calendar.views.day year month day %}'"
+                    onMouseOver="this.bgColor='#eeeeee';"
+                    onMouseOut="this.bgColor='white';"
+                {% endif %} >
+
+                <!-- Day number and entry snippets -->
+                {% if day != 0 %}
+                    {{ day }}
+                    {% for entry in entries %}
+                        <br />
+                        <b>{{ entry.title }}</b>
+                    {% endfor %}
+                {% endif %}
+                </td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+        <div class="clear"></div>
+    </div>
+</div><!--end of calendar-->
+{% endblock content %}

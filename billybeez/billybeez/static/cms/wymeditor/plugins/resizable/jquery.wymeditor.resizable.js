@@ -1,1 +1,1 @@
-/home/yomna/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/plugins/resizable/jquery.wymeditor.resizable.js
+/home/dalia/Envs/billy/local/lib/python2.7/site-packages/cms/static/cms/wymeditor/plugins/resizable/jquery.wymeditor.resizable.js
