@@ -4,6 +4,8 @@
 *.sqlite3
 local_settings.py
 media/uploads
+static
+media
 
 ## generic files to ignore
 *~

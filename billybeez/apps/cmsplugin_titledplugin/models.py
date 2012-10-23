@@ -19,7 +19,7 @@ FONT = (
 class TitledPlugin(AbstractText, VariableWidth):
 	""" Text plugin Class with a title field plus body and span"""
 	title = models.CharField(max_length=50, default='Title')
-	font = models.CharField(max_length=50, default='Title Font', choices=FONT)
+	font = models.CharField(max_length=50, default='h2', choices=FONT)
 	
 	def __unicode__(self):
 		return u"%s" % (truncate_words(strip_tags(self.title), 3)[:30]+"...")
