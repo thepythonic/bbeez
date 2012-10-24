@@ -195,6 +195,7 @@ INSTALLED_APPS = (
     'cmsplugin_titledplugin',
     'cmsplugin_contact',
     'cmsplugin_wrapper',
+    'cmsplugin_tabsplugin',
 )
 
 CMS_PLUGIN_PROCESSORS = (
@@ -253,7 +254,7 @@ CMS_PLACEHOLDER_CONF = {
         'name':gettext("Content Top"),
     },
     'content_center': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin', 'CMSTabPlugin'],
         'name':gettext("Content Center"),
     },
     'content_bottom': {
