@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib import admin
+from cms.models import CMSPlugin
 
-class Entry(models.Model):
+class Entry(CMSPlugin):
 	
 	title    = models.CharField(max_length=40)
 	snippet  = models.CharField(max_length=150 , blank = True)

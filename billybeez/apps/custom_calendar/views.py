@@ -11,9 +11,11 @@ from django.forms.models import modelformset_factory
 from django.template import RequestContext
 
 from custom_calendar.models import *
+from views_helper import get_month_entries
 
-mnames = "January February March April May June July August September October November December"
-mnames = mnames.split()
+
+mnames_string = "January February March April May June July August September October November December"
+mnames = mnames_string.split()
 
 
 
@@ -53,8 +55,7 @@ def main(request, year=None):
             mlst.append(dict(n=n+1, name=month, entry=entry, current=current))
         lst.append((y, mlst))
 
-    return render_to_response("custom_calendar/main.html", dict(years=lst, year=year,
-                                                   reminders=reminders(request)), context_instance=RequestContext(request))
+    return render_to_response("custom_calendar/main.html", dict(years=lst, year=year,reminders=reminders(request)), context_instance=RequestContext(request))
 
 #@login_required
 def month(request, year, month, change=None):
@@ -69,27 +70,7 @@ def month(request, year, month, change=None):
 
         year, month = (now+mod).timetuple()[:2]
 
-    # init variables
-    cal = calendar.Calendar()
-    month_days = cal.itermonthdays(year, month)
-    nyear, nmonth, nday = time.localtime()[:3]
-    lst = [[]]
-    week = 0
-
-    # make month lists containing list of days for each week
-    # each day tuple will contain list of entries and 'current' indicator
-    for day in month_days:
-        entries = current = False   # are there entries for this day; current day?
-        if day:
-            entries = Entry.objects.filter(date__year=year, date__month=month, date__day=day)
-
-            if day == nday and year == nyear and month == nmonth:
-                current = True
-
-        lst[week].append((day, entries, current))
-        if len(lst[week]) == 7:
-            lst.append([])
-            week += 1
+    lst = get_month_entries(year, month)
 
     return render_to_response("custom_calendar/month.html", dict(year=year, month=month,
                         month_days=lst, mname=mnames[month-1], reminders=reminders(request)), context_instance=RequestContext(request))
@@ -103,3 +84,21 @@ def day(request, year, month, day):
             month=month, day=day, reminders=reminders(request)), context_instance=RequestContext(request))
 
 
+def plugin_month(request, year, month, change=None):
+    """Listing of days in `month`."""
+    year, month = int(year), int(month)
+
+    # apply next / previous change
+    if change in ("next", "prev"):
+        now, mdelta = date(year, month, 15), timedelta(days=31)
+        if change == "next":   mod = mdelta
+        elif change == "prev": mod = -mdelta
+
+
+        year, month = (now+mod).timetuple()[:2]
+
+    # init variables
+    lst = get_month_entries(year, month)
+
+    return render_to_response("custom_calendar/plugin_main.html", dict(year=year, month=month,
+                        month_days=lst, mname=mnames[month-1], reminders=reminders(request)), context_instance=RequestContext(request))

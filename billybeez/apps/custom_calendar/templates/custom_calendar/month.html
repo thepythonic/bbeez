@@ -8,8 +8,8 @@
 {% block content %}
 <div id='calendar'>
     <div id='cal_controls'>
-        <a id='prev'  href="{% url custom_calendar.views.main year|add:'-3' %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
-        <a id='next'  href="{% url custom_calendar.views.main year|add:'3' %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-next.gif'/></a>
+        <a id='prev'  href="{% url custom_calendar.views.month year month "prev" %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
+        <a id='next'  href="{% url custom_calendar.views.month year month "next" %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-next.gif'/></a>
     </div>
 
     <h2>{{ mname }} {{ year }}</h2>

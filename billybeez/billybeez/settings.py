@@ -115,7 +115,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     
-    'multihost.middleware.MultiHostMiddleware',
+    #'multihost.middleware.MultiHostMiddleware',
 
     'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -123,8 +123,8 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
 
 )
-MULTIHOST_AUTO_WWW = False
-MULTIHOST_REDIRECT_URL = '/'
+#MULTIHOST_AUTO_WWW = False
+#MULTIHOST_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'billybeez.urls'
 
@@ -198,9 +198,6 @@ INSTALLED_APPS = (
     'custom_calendar',
 )
 
-CMS_PLUGIN_PROCESSORS = (
-    'cmsplugin_wrapper.plugin_processors.wrap_plugin',
-)
 
 CMS_TEMPLATES = (
     ('home.html', 'Home'),
@@ -254,7 +251,7 @@ CMS_PLACEHOLDER_CONF = {
         'name':gettext("Content Top"),
     },
     'content_center': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin', 'Custom_Calendar'],
         'name':gettext("Content Center"),
     },
     'content_bottom': {
