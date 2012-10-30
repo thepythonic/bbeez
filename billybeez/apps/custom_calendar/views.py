@@ -1,7 +1,9 @@
 import time
 import calendar
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
+import datetime
 
+from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
@@ -11,7 +13,7 @@ from django.forms.models import modelformset_factory
 from django.template import RequestContext
 
 from custom_calendar.models import *
-from views_helper import get_month_entries
+from views_helper import get_month_entries, get_correct_year_month_or_redirect
 
 
 mnames_string = "January February March April May June July August September October November December"
@@ -24,12 +26,12 @@ mnames = mnames_string.split()
 def reminders(request):
     """Return the list of reminders for today and tomorrow."""
     year, month, day = time.localtime()[:3]
-    reminders = Entry.objects.filter(date__year=year, date__month=month,
-                                   date__day=day, remind=True)
-    tomorrow = datetime.now() + timedelta(days=1)
+    reminders = Entry.objects.filter(start_date__year=year, start_date__month=month,
+                                   start_date__day=day, remind=True)
+    tomorrow = datetime.datetime.now() + timedelta(days=1)
     year, month, day = tomorrow.timetuple()[:3]
-    return list(reminders) + list(Entry.objects.filter(date__year=year, date__month=month,
-                                   date__day=day,  remind=True))
+    return list(reminders) + list(Entry.objects.filter(start_date__year=year, start_date__month=month,
+                                   start_date__day=day,  remind=True))
 
 #@login_required
 def main(request, year=None):
@@ -46,7 +48,7 @@ def main(request, year=None):
         mlst = []
         for n, month in enumerate(mnames):
             entry = current = False   # are there entry(s) for this month; current month?
-            entries = Entry.objects.filter(date__year=y, date__month=n+1)
+            entries = Entry.objects.filter(start_date__year=y, start_date__month=n+1)
 
             if entries:
                 entry = True
@@ -60,26 +62,26 @@ def main(request, year=None):
 #@login_required
 def month(request, year, month, change=None):
     """Listing of days in `month`."""
-    year, month = int(year), int(month)
-
-    # apply next / previous change
-    if change in ("next", "prev"):
-        now, mdelta = date(year, month, 15), timedelta(days=31)
-        if change == "next":   mod = mdelta
-        elif change == "prev": mod = -mdelta
-
-        year, month = (now+mod).timetuple()[:2]
-
-    lst = get_month_entries(year, month)
-
+    year, month, redirect = get_correct_year_month_or_redirect(year, month)
+ 
+    if redirect:
+        return HttpResponseRedirect(reverse('custom_calendar.views.month', args=(year, month,)) )
+    
+    cal = calendar.Calendar()
+    month_days = cal.itermonthdays(year, month)
+    lst, entries = get_month_entries(year, month)
     return render_to_response("custom_calendar/month.html", dict(year=year, month=month,
-                        month_days=lst, mname=mnames[month-1], reminders=reminders(request)), context_instance=RequestContext(request))
+                        month_days=lst, mname=mnames[month-1], reminders=reminders(request), entries=entries), context_instance=RequestContext(request))
 
 #@login_required
 def day(request, year, month, day):
     """Entries for the day."""
-        # display  existing enties
-    entries = Entry.objects.filter(date__year=year,date__month=month, date__day=day)
+        # display  existing entries
+    year = int(year)
+    month = int(month)
+    day = int(day)
+
+    entries = Entry.objects.filter( start_date__lte=datetime.date(year, month, day), end_date__gte=datetime.date( year, month, day)).order_by('start_date')
     return render_to_response("custom_calendar/day.html", dict(entries=entries, year=year,
             month=month, day=day, reminders=reminders(request)), context_instance=RequestContext(request))
 
