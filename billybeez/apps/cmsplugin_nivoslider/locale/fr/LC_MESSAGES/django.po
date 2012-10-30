@@ -1,0 +1,110 @@
+# French translation of the cmsplugin_nivoslider.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cmsplugin_nivoslider package.
+# Marion Balensi <kitsunesama@laposte.net>, 2012.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cmsplugin_nivoslider 0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-28 22:42+0200\n"
+"PO-Revision-Date: 2012-07-26 15:08+0200\n"
+"Last-Translator: Marion Balensi <kitsunesama@laposte.net>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: cms_plugins.py:11
+msgid "Slider"
+msgstr "Diaporama"
+
+#: cms_plugins.py:20
+msgid "Controls"
+msgstr "Contrôles"
+
+#: models.py:44
+msgid "title"
+msgstr "titre"
+
+#: models.py:45
+msgid "album"
+msgstr "album"
+
+#: models.py:46
+msgid "theme"
+msgstr "thème"
+
+#: models.py:48
+msgid "effect"
+msgstr "effet"
+
+#: models.py:50
+msgid "manual advance"
+msgstr "avancée manuelle"
+
+#: models.py:51
+msgid "anim speed"
+msgstr "durée d'animation"
+
+#: models.py:52
+msgid "Animation Speed (ms)"
+msgstr "Durée d'animation (en ms)"
+
+#: models.py:53
+msgid "pause time"
+msgstr "temps de pause"
+
+#: models.py:54
+msgid "Pause time (ms)"
+msgstr "Temps de pause (en ms)"
+
+#: models.py:55
+msgid "width"
+msgstr "largeur"
+
+#: models.py:56
+msgid "Width of the plugin (px)"
+msgstr "Largeur imposée au diaporama (en pixels)"
+
+#: models.py:57
+msgid "height"
+msgstr "hauteur"
+
+#: models.py:58
+msgid "Height of the plugin (px)"
+msgstr "Hauteur imposée au diaporama (en pixels)"
+
+#: models.py:59
+msgid "arrows"
+msgstr "flèches"
+
+#: models.py:60
+msgid "Arrow buttons for navigation"
+msgstr "Navigation avec les flèches"
+
+#: models.py:61
+msgid "thumbnails"
+msgstr "miniatures"
+
+#: models.py:62
+msgid "Thumbnails for navigation [only works with the default theme!]"
+msgstr "Navigation par miniatures [ne fonctionne qu'avec le thème « default »]"
+
+#: models.py:64
+msgid "random start"
+msgstr "diapositive de départ aléatoire"
+
+#: models.py:65
+msgid "pause on mouse hover"
+msgstr "pause lors du survol de la souris"
+
+#: templates/nivo/slider.html:59
+msgid "prev"
+msgstr "préc."
+
+#: templates/nivo/slider.html:60
+msgid "next"
+msgstr "suiv."
