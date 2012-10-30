@@ -198,7 +198,7 @@ INSTALLED_APPS = (
 )
 
 CMS_PLUGIN_PROCESSORS = (
-    'cmsplugin_wrapper.plugin_processors.wrap_plugin',
+    #'cmsplugin_wrapper.plugin_processors.wrap_plugin',
 )
 
 CMS_TEMPLATES = (
@@ -247,20 +247,20 @@ LOGGING = {
 
 CMS_SEO_FIELDS = True
 
-CMS_PLACEHOLDER_CONF = {
-    'content_top': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
-        'name':gettext("Content Top"),
-    },
-    'content_center': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
-        'name':gettext("Content Center"),
-    },
-    'content_bottom': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
-        'name':gettext("Content Bottom"),
-    },
-}
+# CMS_PLACEHOLDER_CONF = {
+#     'content_top': {
+#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
+#         'name':gettext("Content Top"),
+#     },
+#     'content_center': {
+#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+#         'name':gettext("Content Center"),
+#     },
+#     'content_bottom': {
+#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
+#         'name':gettext("Content Bottom"),
+#     },
+# }
 
 try:
     from local_settings import *
