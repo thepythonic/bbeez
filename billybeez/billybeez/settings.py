@@ -95,7 +95,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -105,7 +105,7 @@ SECRET_KEY = '0ots!#jf=q22wqv5y04_!+)ovk!q12n18%tg_$w%-ub(4hp7_='
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -166,15 +166,15 @@ INSTALLED_APPS = (
     'south',
     'sekizai', 
 
-    #'cms.plugins.file',
+    # 'cms.plugins.file',
     'cms.plugins.flash',
     'cms.plugins.googlemap',
     'cms.plugins.link',
-   # 'cms.plugins.picture',
+    # 'cms.plugins.picture',
     'cms.plugins.snippet',
-   # 'cms.plugins.teaser',
+    # 'cms.plugins.teaser',
     'cms.plugins.text',
-  #  'cms.plugins.video',
+    # 'cms.plugins.video',
     'cms.plugins.twitter',
     
     'cmsplugin_text_variable_width',
@@ -190,15 +190,16 @@ INSTALLED_APPS = (
 
     'cmsplugin_gallery',
 
-    #our Custom plugins
-    'cmsplugin_bootstrap_carousel',
-    'cmsplugin_titledplugin',
-    'cmsplugin_contact',
-    'cmsplugin_wrapper',
+    # Our Custom plugins
+    'cmsplugin_bootstrap_carousel',     # CarouselPlugin
+    'cmsplugin_titledplugin',           # TitledPlugin
+    'cmsplugin_contact',                # ContactPlugin
+    'cmsplugin_wrapper',                # CMSWrapperPlugin
+    'cmsplugin_nivoslider',             # CMSSliderPlugin
 )
 
 CMS_PLUGIN_PROCESSORS = (
-    #'cmsplugin_wrapper.plugin_processors.wrap_plugin',
+    'cmsplugin_wrapper.plugin_processors.wrap_plugin',
 )
 
 CMS_TEMPLATES = (
@@ -208,6 +209,7 @@ CMS_TEMPLATES = (
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
+    'cmsplugin_nivoslider.thumbnail_processors.pad_image',
     'easy_thumbnails.processors.autocrop',
     #'easy_thumbnails.processors.scale_and_crop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
@@ -247,20 +249,20 @@ LOGGING = {
 
 CMS_SEO_FIELDS = True
 
-# CMS_PLACEHOLDER_CONF = {
-#     'content_top': {
-#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
-#         'name':gettext("Content Top"),
-#     },
-#     'content_center': {
-#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
-#         'name':gettext("Content Center"),
-#     },
-#     'content_bottom': {
-#         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
-#         'name':gettext("Content Bottom"),
-#     },
-# }
+CMS_PLACEHOLDER_CONF = {
+    'content_top': {
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
+        'name':gettext("Content Top"),
+    },
+    'content_center': {
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin'],
+        'name':gettext("Content Center"),
+    },
+    'content_bottom': {
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
+        'name':gettext("Content Bottom"),
+    },
+}
 
 try:
     from local_settings import *

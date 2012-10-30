@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-28 22:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cms_plugins.py:11
+msgid "Slider"
+msgstr ""
+
+#: cms_plugins.py:20
+msgid "Controls"
+msgstr ""
+
+#: models.py:44
+msgid "title"
+msgstr ""
+
+#: models.py:45
+msgid "album"
+msgstr ""
+
+#: models.py:46
+msgid "theme"
+msgstr ""
+
+#: models.py:48
+msgid "effect"
+msgstr ""
+
+#: models.py:50
+msgid "manual advance"
+msgstr ""
+
+#: models.py:51
+msgid "anim speed"
+msgstr ""
+
+#: models.py:52
+msgid "Animation Speed (ms)"
+msgstr ""
+
+#: models.py:53
+msgid "pause time"
+msgstr ""
+
+#: models.py:54
+msgid "Pause time (ms)"
+msgstr ""
+
+#: models.py:55
+msgid "width"
+msgstr ""
+
+#: models.py:56
+msgid "Width of the plugin (px)"
+msgstr ""
+
+#: models.py:57
+msgid "height"
+msgstr ""
+
+#: models.py:58
+msgid "Height of the plugin (px)"
+msgstr ""
+
+#: models.py:59
+msgid "arrows"
+msgstr ""
+
+#: models.py:60
+msgid "Arrow buttons for navigation"
+msgstr ""
+
+#: models.py:61
+msgid "thumbnails"
+msgstr ""
+
+#: models.py:62
+msgid "Thumbnails for navigation [only works with the default theme!]"
+msgstr ""
+
+#: models.py:64
+msgid "random start"
+msgstr ""
+
+#: models.py:65
+msgid "pause on mouse hover"
+msgstr ""
+
+#: templates/nivo/slider.html:59
+msgid "prev"
+msgstr ""
+
+#: templates/nivo/slider.html:60
+msgid "next"
+msgstr ""

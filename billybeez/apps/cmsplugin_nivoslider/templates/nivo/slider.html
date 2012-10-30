@@ -1,0 +1,64 @@
+{% load i18n sekizai_tags %}
+{% load thumbnail %}
+
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}nivo/nivo-slider.css" type="text/css" media="screen" />
+{% endaddtoblock %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}nivo/themes/{{ object.theme }}/{{ object.theme }}.css" type="text/css" media="screen" />
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}nivo/js/jquery.nivo.slider.pack.js"></script>
+{% endaddtoblock %}
+
+<div    class="slider-wrapper theme-{{ object.theme }}"
+        {% if object.width %}
+            style="width: {{ object.width }}px;"
+        {% endif %}>
+    <div    id="nivoslider{{ object.pk }}" class="nivoSlider"
+            title="{{ object.title|default:'' }}"
+            {% if object.height %}
+                style="height: {{ object.height }}px;"
+            {% endif %}>
+        {% for img in images %}
+            <img    id="nivo-slide{{ img.pk }}-image"
+                    src="{% if object.size %}{% thumbnail img.image object.size %}{% else %}{{ img.image.url }}{% endif %}"
+                    data-thumb="{% thumbnail img.image 64x64 %}"
+                    alt="{{ img.name|default:'' }}" />
+            {% spaceless %}
+                <div id="nivo-slide{{ img.pk }}-text">
+                    {{ img.description|default:''|safe }}
+                </div>
+            {% endspaceless %}
+        {% endfor %}
+    </div>
+</div>
+
+{% for img in images %}
+    <script type="text/javascript">
+        var image = document.getElementById("nivo-slide{{ img.pk }}-image");
+        var text = document.getElementById("nivo-slide{{ img.pk }}-text");
+        image.title = text.innerHTML;
+        text.parentNode.removeChild(text);
+    </script>
+{% endfor %}
+
+<script type="text/javascript">
+    $(function() {
+        $('#nivoslider{{ object.pk }}').nivoSlider({
+            effect: '{{ object.effect }}',
+            animSpeed: {{ object.anim_speed }},
+            pauseTime: {{ object.pause_time }},
+            directionNav: {{ object.arrows|lower }},
+            controlNavThumbs: {{ object.thumbnails|lower }},
+            pauseOnHover: {{ object.pause_on_hover|lower }},
+            manualAdvance: {{ object.manual_advance|lower }},
+            prevText: '{% trans 'prev'|capfirst %}',
+            nextText: '{% trans 'next'|capfirst %}',
+            randomStart: {{ object.random_start|lower }}
+        });
+    });
+</script>
