@@ -4,9 +4,8 @@
 *.sqlite3
 local_settings.py
 media/uploads
+media/
 billybeez/static/
-media
-
 ## generic files to ignore
 *~
 *.lock
