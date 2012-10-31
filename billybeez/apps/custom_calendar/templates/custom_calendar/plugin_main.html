@@ -1,7 +1,7 @@
+{% load cms_tags menu_tags sekizai_tags %}
 
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />
-
-
+{% addtoblock "css" %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
 
 <div id='calendar'>
     
