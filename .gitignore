@@ -5,7 +5,7 @@
 local_settings.py
 media/uploads
 media/
-billybeez/static/
+billybeez/static/*
 ## generic files to ignore
 *~
 *.lock
