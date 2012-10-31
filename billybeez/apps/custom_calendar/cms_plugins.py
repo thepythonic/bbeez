@@ -9,9 +9,9 @@ from datetime import date, datetime
 from views import mnames
 from views_helper import get_month_entries
 
-class Custom_Calendar(CMSPluginBase):
+class CustomCalendarPlugin(CMSPluginBase):
     model = Entry
-    name = _("Custom_Calendar")
+    name = _("Custom Calendar")
     render_template = "custom_calendar/plugin_main.html"
 
 
@@ -25,4 +25,4 @@ class Custom_Calendar(CMSPluginBase):
     		})
         return context
 
-plugin_pool.register_plugin(Custom_Calendar)
+plugin_pool.register_plugin(CustomCalendarPlugin)
