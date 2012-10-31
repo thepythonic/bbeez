@@ -7,10 +7,6 @@ from cms.models import CMSPlugin
 
 from custom_utils.date_utils import daterange
 
-
-
-
-
 class Entry(CMSPlugin):
 	
 	title        	   = models.CharField(max_length=40)

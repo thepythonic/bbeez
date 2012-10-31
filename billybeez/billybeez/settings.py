@@ -190,14 +190,6 @@ INSTALLED_APPS = (
 
     'cmsplugin_gallery',
 
-        
-    #our Custom plugins
-    'cmsplugin_bootstrap_carousel',
-    'cmsplugin_titledplugin',
-    'cmsplugin_contact',
-    'cmsplugin_wrapper',
-    
-    
     # Our Custom plugins
     'cmsplugin_bootstrap_carousel',     # CarouselPlugin
     'cmsplugin_titledplugin',           # TitledPlugin
@@ -205,7 +197,6 @@ INSTALLED_APPS = (
     'cmsplugin_wrapper',                # CMSWrapperPlugin
     'cmsplugin_nivoslider',             # CMSSliderPlugin
     'custom_calendar',                  # CustomCalendarPlugin
-    
 )
 
 

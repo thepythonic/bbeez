@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
-{% load cms_tags menu_tags sekizai_tags %}
-
-{% addtoblock "css" %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
-
+{% load sekizai_tags %}
 
 {% block content %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
 <div id='calendar'>
     <div id='cal_controls'>
         <a id='prev'  href="{% url custom_calendar.views.month year month|add:-1 %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>

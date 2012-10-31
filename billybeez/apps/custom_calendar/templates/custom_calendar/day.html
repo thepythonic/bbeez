@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% load cms_tags menu_tags sekizai_tags %}
+{% load sekizai_tags %}
 
-{% addtoblock "css" %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+
 
 {% block content %}
-
+	{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+	
 <h2>{{mname}} Events</h2>
 {% for entry in entries %}
     <div class="entry" >

@@ -17,7 +17,7 @@ class CustomCalendarPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
     	year, month, day = time.localtime()[:3]
-    	month_days = get_month_entries(year, month)
+    	month_days, entries = get_month_entries(year, month)
     	context.update({
 			'year': year,
 			'month':month,

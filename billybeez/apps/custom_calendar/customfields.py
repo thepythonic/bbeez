@@ -11,7 +11,9 @@ class ColorPickerWidget(forms.TextInput):
             )
         }
         js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js',
+            "/static/cms/js/libs/classy.min.js",
+            "/static/cms/js/plugins/cms.setup.js",
+            "/static/cms/js/plugins/cms.base.js",
             settings.STATIC_URL + 'custom_calendar/js/colorpicker.js',
         )
 

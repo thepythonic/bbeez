@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
-{% load cms_tags menu_tags sekizai_tags calendar_extra %}
+{% load sekizai_tags calendar_extra %}
 
-{% addtoblock "css" %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
 
 {% block content %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+
 <div id='calendar'>
     <div id='cal_controls'>
-       <a id='prev'  href='{% url custom_calendar.views.main year|subtract:"3" %}'><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
+       <a id='prev'  href='{% url custom_calendar.views.main year|add:"-3" %}'><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
         <a id='next'  href='{% url custom_calendar.views.main year|add:"3" %}'><img src='{{STATIC_URL }}custom_calendar/images/btn-next.gif'/></a>
     </div>
     {% for year, months in years %}
