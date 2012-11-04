@@ -1,0 +1,105 @@
+#next{
+	width:70px;
+	height:30px;
+	float:left;
+}
+#prev{
+	width:70px;
+	height:30px;
+	float:left;
+}
+.month{
+	float: left;
+	width:160px;
+	height:40px;
+	text-align: left;
+
+}
+#cal_controls{
+	height:50px;
+
+}
+#calendar{
+	width:1024px;
+	height: auto;
+
+}
+.current{
+	float: left;
+	width: 150px;
+	height:50px;
+	font-weight: bold;
+
+
+}
+.current a{
+	color:#F10303;
+
+}
+.cal_entry{
+	font-style: italic;
+	font-weight: bold;
+
+}
+.months{
+	margin-left: 45px;
+	margin-top: 20px;
+	height:100px;
+}
+.day{
+	width:80px;
+	height:80px;
+	cursor: pointer;
+}
+.current_day{
+	background:rgba(255, 232, 0, 1.7);
+	width:80px;
+	height:80px;
+	cursor: pointer;
+	font-style: italic;
+
+
+}
+ul{
+	list-style-type: none;
+
+}
+.plugin_day{
+padding:10px 10px 0px 0px;
+text-align: center;
+cursor: pointer;
+
+}
+.plugin_current_day{
+	background:rgba(255, 232, 0, 1.7);
+	font-style: italic;
+	padding:10px 10px 0px 0px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+
+}
+.plugin_entry_day{
+	font-style: italic;
+	padding:10px 10px 0px 0px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+
+}
+.plugin_empty{
+	padding:10px 10px 0px 0px;
+	font-size: 15px;
+	font-weight: bold;
+
+
+}
+.inner_cal_snippet{
+
+	float:left;
+}
+.inner_cal_month{
+	float: right;
+
+
+}

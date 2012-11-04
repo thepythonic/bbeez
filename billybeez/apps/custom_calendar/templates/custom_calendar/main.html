@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load sekizai_tags calendar_extra %}
+
+
+{% block content %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+
+<div id='calendar'>
+    <div id='cal_controls'>
+       <a id='prev'  href='{% url custom_calendar.views.main year|add:"-3" %}'><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
+        <a id='next'  href='{% url custom_calendar.views.main year|add:"3" %}'><img src='{{STATIC_URL }}custom_calendar/images/btn-next.gif'/></a>
+    </div>
+    {% for year, months in years %}
+        <div class="clear"></div>
+        <h2>{{ year }}</h2>
+        <div class='months'>
+        {% for month in months %}
+            <div class=
+            {% if month.current %}
+                 {% if month.entry %}
+                        "current cal_entry"
+                    {% else %}
+                        "current"
+                {% endif %}
+            {% endif %}
+            {% if not month.current %}
+                {% if month.entry %}
+                        "month cal_entry"
+                    {% else %}
+                        "month"
+                {% endif %}
+            {% endif %} >
+                
+                <a href="{% url custom_calendar.views.month year month.n %}">{{ month.name }}</a>
+                {% if month.entry %}{% endif %}
+            </div>
+
+            {% if month.n == 6 %}{% endif %}
+        {% endfor %}
+         </div><!--end of months-->
+    {% endfor %}
+   
+</div><!--end of calendar-->
+{% endblock content %}

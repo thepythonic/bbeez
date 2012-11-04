@@ -1,5 +1,5 @@
 1 Install image library
-sudo apt-get build-dep python-imaging install python-dev libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev libjpeg8-dev install libjpeg62-dev
+sudo apt-get install build-dep python-imaging python-dev libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev libjpeg8-dev 
 
 2- Install django-cms 
 pip install -r reqs/dev.txt

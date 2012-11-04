@@ -1,0 +1,50 @@
+{% load cms_tags menu_tags sekizai_tags %}
+
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />
+
+<div id='calendar'>   
+
+    <div class="plugin-month">
+        <table>
+
+        <tr>
+            <td class="plugin_empty">Mon</td>
+            <td class="plugin_empty">Tue</td>
+            <td class="plugin_empty">Wed</td>
+            <td class="plugin_empty">Thu</td>
+            <td class="plugin_empty">Fri</td>
+            <td class="plugin_empty">Sat</td>
+            <td class="plugin_empty">Sun</td>
+        </tr>
+
+        {% for week in month_days %}
+            <tr>
+            {% for day, entries, current in week %}
+
+                <!-- TD style: empty | day | current; onClick handler and highlight  -->
+                <td class= {% if day == 0 %}"plugin_empty"{% endif %}
+                {% if day != 0 and current and entries %}"plugin_current_day"{% endif %}
+                {% if day != 0 and not current and entries %}"plugin_entry_day"{% endif %}
+                {% if day != 0 and not current and not entries %}"plugin_day"{% endif %}
+                
+               
+                {% if day != 0 %}
+                    onClick="parent.location='{% url custom_calendar.views.day year month day %}'"
+                    onMouseOver="this.bgColor='#eeeeee';"
+                    onMouseOut="this.bgColor='white';"
+                {% endif %} >
+
+                <!-- Day number and entry snippets -->
+                {% if day != 0 %}
+                    {{ day }}
+                   
+                {% endif %}
+                </td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+
+        <div class="clear"></div>
+    </div>
+</div><!--end of calendar-->

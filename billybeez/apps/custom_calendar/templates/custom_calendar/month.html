@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load sekizai_tags %}
+
+{% block content %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+<div id='calendar'>
+    <div id='cal_controls'>
+        <a id='prev'  href="{% url custom_calendar.views.month year month|add:-1 %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-prev.gif'/></a>
+        <a id='next'  href="{% url custom_calendar.views.month year month|add:1 %}"><img src='{{STATIC_URL }}custom_calendar/images/btn-next.gif'/></a>
+    </div>
+
+   
+
+    <div class="month-inner">
+        <div class='inner_cal_snippet'>
+            {% if entries %}
+            <h2>Events of the month</h2>
+            <ul>
+                {% for entry in entries %}
+                <li>
+                    <ul>
+                       <li ><br/>
+                        <i>Event :</i> {{ entry.title }}<br/>
+                        <i><i >Duration </i></i>: {{ entry.start_date }}  --- {{entry.end_date}}<br/>
+                        <i>Description</i> : {{ entry.snippet }}.....<a href='{% url custom_calendar.views.day entry.start_date.year entry.start_date.month  entry.start_date.day %}' >Read More>></a></li>
+                        </ul>
+                    </li>
+                {% endfor %}
+               
+            </ul>
+            {% endif %}
+        </div>
+        <div class="inner_cal_month">
+             <h2>{{ mname }} {{ year }}</h2>
+            <table>
+
+            <tr>
+                <td class="empty">Mon</td>
+                <td class="empty">Tue</td>
+                <td class="empty">Wed</td>
+                <td class="empty">Thu</td>
+                <td class="empty">Fri</td>
+                <td class="empty">Sat</td>
+                <td class="empty">Sun</td>
+            </tr>
+
+            {% for week in month_days %}
+                <tr>
+                {% for day, month_entries, current in week %}
+
+                    <!-- TD style: empty | day | current; onClick handler and highlight  -->
+                    <td class= {% if day == 0 %}"empty"{% endif %}
+                    {% if day != 0 and not current %}"day"{% endif %}
+                    {% if day != 0 and current %}"current_day"{% endif %}
+                    {% if day != 0 %}
+                        onClick="parent.location='{% url custom_calendar.views.day year month day %}'"
+                        onMouseOver="this.bgColor='#eeeeee';"
+                        onMouseOut="this.bgColor='white';"
+                    {% endif %} >
+
+                    <!-- Day number and entry snippets -->
+                    {% if day != 0 %}
+                        {{ day }}
+                        <ul>
+                            {% for entry in month_entries %}
+                                
+                                <li style={% if entry.cal_colour %}"color:#{{entry.cal_colour}}"{% endif %}><b>{{ entry.title }}</b></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    </td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+        </div><!-- end inner _cal _month-->
+
+        <div class="clear"></div>
+    </div>
+</div><!--end of calendar-->
+{% endblock content %}

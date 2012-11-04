@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load sekizai_tags %}
+
+
+
+{% block content %}
+	{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}custom_calendar/css/calendar.css" media="screen" />{% endaddtoblock %}
+	
+<h2>{{mname}} Events</h2>
+{% for entry in entries %}
+    <div class="entry" >
+	    <h3>{{ entry.title}}</h3>
+	  	 <!--<p>
+	  		Created by : {{ entry.creator }} 
+		</p>-->
+		<p>
+		    {{ entry.body }}
+		</p>
+	    {% if  not forloop.last %}
+	    	<img align="center" src="{{ STATIC_URL }}/img/separator_1.png" alt="">
+	    {% endif %}
+    </div>
+{% endfor %} <br />
+
+{% endblock content %}
