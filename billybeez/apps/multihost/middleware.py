@@ -47,7 +47,7 @@ class MultiHostMiddleware(object):
         # if the site returned equates to the default SITE_ID (1, by default), then
         # redirect to a safe location.
         site = Site.objects.get_current()
-        
+
         if not site:
             # this will intentionally raise an exception if the user does not set a default
             # redirect URL in `MULTIHOST_REDIRECT_URL`.  It is required in the event a
