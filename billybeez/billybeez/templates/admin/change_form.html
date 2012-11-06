@@ -1,4 +1,4 @@
-{% extends 'admin/base_site.html' %}
+{% extends "admin/base_site.html" %}
 {% load i18n admin_static admin_modify adminmedia cms_tags cms_admin %}
 {% load url from future %}
 {% load admin_urls %}
@@ -13,59 +13,7 @@
 <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.setup.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.base.js"></script>
-
-<script type="text/javascript">
-//<![CDATA[
-(function($) {
-function runOnLoad(f) {
-if (runOnLoad.loaded){
-f();
-}else{
-runOnLoad.funcs.push(f);
-}
-}
-runOnLoad.funcs = [];
-runOnLoad.loaded = false;
-runOnLoad.run = function() {
-if (runOnLoad.loaded) return;
-
-for(var i = 0; i < runOnLoad.funcs.length; i++) {
-try {
-runOnLoad.funcs[i]();
-}catch(e) { }
-}
-runOnLoad.loaded = true;
-delete runOnLoad.funcs;
-delete runOnLoad.run;
-};
-if (window.addEventListener){
-window.addEventListener("load", runOnLoad.run, false);
-}else if (window.attachEvent){
-window.attachEvent("onload", runOnLoad.run);
-}else{
-window.onload = runOnLoad.run;
-}
-{% if plugin %}
-runOnLoad(function(){
-parent.setiframeheight($('body').height()+20, {{ plugin.pk }});
-});
-{% endif %}
-
-$(document).ready(function(){
-$("a.add-another,a.related-lookup").each(function(i, sign){
-var href = $(sign).attr("href");
-if (href.substr(0,2) == ".."){
-href = "../../"+href;
-$(sign).attr("href", href);
-}
-});
-});
-})(window.CMS.$);
-//]]>
-</script>
-
 {% endblock %}
-
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />{% endblock %}
 
@@ -90,7 +38,6 @@ $(sign).attr("href", href);
   <ul class="object-tools">
     {% block object-tools-items %}
     <li><a href="{% url opts|admin_urlname:'history' original.pk %}" class="historylink">{% trans "History" %}</a></li>
-    {% if has_absolute_url %}<li><a href="{% url 'admin:view_on_site' content_type_id original.pk %}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif%}
     {% endblock %}
   </ul>
 {% endif %}{% endif %}
