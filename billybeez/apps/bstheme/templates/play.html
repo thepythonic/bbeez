@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+{% block content %}
+
+	<div class="row-fluid">
+	    <div class="container play_main_img">
+		   {% placeholder 'content_top' %}
+	    </div>
+	</div>
+
+	<div class="row-fluid" data-original-title="">
+	    {% placeholder 'content_center' %}
+		<img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
+	</div>
+
+	<!-- play ground section -->
+	<div class="row-fluid up60_play">
+		{% placeholder 'content_playground' %}
+	</div> <!-- end of play ground section -->
+
+{% endblock %}

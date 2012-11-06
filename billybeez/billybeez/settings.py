@@ -205,11 +205,10 @@ INSTALLED_APPS = (
 
 
 CMS_TEMPLATES = (
-    ('home.html', 'Home'),
-    ('main.html', 'Main'),
-    ('plan.html', 'Plan'),
-    ('play.html', 'Play'),
-    ('tab.html', 'Tab'),
+    ('main.html', 'Home'),
+    ('plan.html', 'Plan your visit'),
+    ('play.html', 'Playground'),
+    ('tab.html', 'Tab Template'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping

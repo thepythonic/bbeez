@@ -10,52 +10,59 @@
     <meta name="author" content="">
     
     <!-- Le styles -->
-    {% addtoblock "css" %}<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
     {% addtoblock "css" %}<link href="/static/css/bootstrap.css" rel="stylesheet">{% endaddtoblock %}
-    
-    {% addtoblock "css" %}<link href="/static/css/styles.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/style.css" rel="stylesheet">{% endaddtoblock %}
 
-    {% addtoblock "css" %}<style type="text/css">
-      /*body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-      .left{ float:left;}
-      .right{ float:right;}
-      img.left{margin: 10px 20px 0 0;}
-      img.right{margin: 10px 0 0 20px;}
-      .text-plugin{margin-left:0;}
-      .row-fluid [class*="span"]:first-child {
-        margin-left: 2.564102564102564%;
+    {% addtoblock "css" %}
+      <style type="text/css">
+        .sidebar-nav {padding: 9px 0;}
+        .left{ float:left;}
+        .right{ float:right;}
+        img.left{margin: 10px 20px 0 0;}
+        img.right{margin: 10px 0 0 20px;}
+        .text-plugin{margin-left:0;}
+        .tab-pane h2{
+                font-family: "Cartoon";
+                font-size:18px;
+                color:#383578;
+                background: #fff;
+                text-align: left;
         }
-      .title-plugin img{
-        height:100px;
-        width: 100px;
-        margin-top: -110px;
-      }*/
-    </style>{% endaddtoblock %}
+        .tab-pane h4{
+                font-family:Arial, Helvetica, sans-serif;
+                font-size:14px;
+                font-weight:bold;
+                color: #383578;
+                text-align: left;
+        }
+        .subscribe h4{
+          font-family:Arial, Helvetica, sans-serif;
+        }
+      </style>
+    {% endaddtoblock %}
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    {% addtoblock "js" %}<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->{% endaddtoblock %}
+    {% addtoblock "js" %}
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    {% endaddtoblock %}
 
     {% block favicon %}
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/static/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+      <!-- Le fav and touch icons -->
+      <link rel="shortcut icon" href="/static/ico/favicon.ico">
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
     {% endblock favicon %}
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     {% addtoblock "js" %}<script src="/static/js/jquery.js"></script>{% endaddtoblock %}
+    {% addtoblock "js" %}<script src="/static/js/bootstrap.min.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-transition.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-alert.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-modal.js"></script>{% endaddtoblock %}
@@ -69,10 +76,28 @@
     {% addtoblock "js" %}<script src="/static/js/bootstrap-carousel.js"></script>{% endaddtoblock %}
     {% addtoblock "js" %}<script src="/static/js/bootstrap-typeahead.js"></script>{% endaddtoblock %}
 
+  {% addtoblock "js" %}
+      <script>
+          $(function () {
+              $('#tablist a:first').tab('show');
+          })
 
-    {% render_block "css" %}
-    {% render_block "js" %}
+          $('#tablist a').live('click', function (e) {
+              e.preventDefault();
+              tab_id = '#tab-' + $(this).attr('id');
+              // load tab contant if tab is empty
+              if( !$.trim( $(tab_id).html() ).length ) {
+                  $.get( $(this).attr('link'), function(data){
+                      $(tab_id).html(data);
+                  });
+              }
+              $(this).tab('show');
+          });
+      </script>
+  {% endaddtoblock %}
 
+  {% render_block "css" %}
+  {% render_block "js" %}
   </head>
 
   <body>
@@ -82,8 +107,7 @@
         <div class="container" style="margin-bottom: 23px;">
           <img id="logo"src="{{ STATIC_URL }}img/logo.png" alt=""/>
           <div id="language" class="header">  
-              <a style="font-weight:normal;"> عربي</a>  |
-              <a> English</a>
+              <a style="font-weight:normal;"> عربي</a>  |   <a> English</a>
           </div>
           {% block nav-menu %}
           <div class="navbar">
@@ -96,35 +120,38 @@
         </div>
       </div>
     {% endblock header %}
-    
-    <div class="container" style="background:#fff;">
-          {% block content %}
-          {% endblock content %}
-    </div>  
-    {% block footer %}  
-      <div class="bg">
-        <div class="container" id="footer" style="background: white;">
-            <img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
-            <table align="center">
-              <tr>
-              <td><a href="">About Billy Beez</a></td><td>|</td>
-              <td><a href="">Terms &amp; Conditions</a></td><td>|</td>
-              <td><a href="">Privacy Policy</a></td><td>|</td>
-              <td><a href="">Site Map</a></td><td>|</td>
-              <td><a href="">Contact Us</a></td>
-              </tr>
-            </table>
-            <p> All rights reserved 2012  Billy Beez</p>
-            <div class="offset9">
-            <p style="text-align:left;">Follow Us:</p>
-              <a href=""><img class="social" src="{{ STATIC_URL }}img/facebook.png"/></a>
-              <a href=""><img class="social" src="{{ STATIC_URL }}img/twitter.png"/></a>
-              <a href=""><img class="social"src="{{ STATIC_URL }}img/youtube.png"/></a>
-            </div>
-          </div>
-        </div>
+
+    <div id="bodyBg">
+      <div class="container-fluid" style="background:#fff;">
+            {% block content %}
+            {% endblock content %}
+
+            {% block footer %}  
+              <div class="bg">
+                <div class="container" id="footer" style="background: white;">
+                    <img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
+                    <table align="center">
+                      <tr>
+                      <td><a href="">About Billy Beez</a></td><td>|</td>
+                      <td><a href="">Terms &amp; Conditions</a></td><td>|</td>
+                      <td><a href="">Privacy Policy</a></td><td>|</td>
+                      <td><a href="">Site Map</a></td><td>|</td>
+                      <td><a href="">Contact Us</a></td>
+                      </tr>
+                    </table>
+                    <p> All rights reserved 2012  Billy Beez</p>
+                    <div class="offset9">
+                    <p style="text-align:left;">Follow Us:</p>
+                      <a href=""><img class="social" src="{{ STATIC_URL }}img/facebook.png"/></a>
+                      <a href=""><img class="social" src="{{ STATIC_URL }}img/twitter.png"/></a>
+                      <a href=""><img class="social"src="{{ STATIC_URL }}img/youtube.png"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endblock footer %}
       </div>
-    {% endblock footer %}
+    </div>
 
   </body>
 </html>

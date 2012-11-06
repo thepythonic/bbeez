@@ -1,0 +1,8 @@
+{% load cms_tags sekizai_tags %}
+
+{% render_block "css" %}
+{% render_block "js" %}
+
+<div id="{% page_attribute 'slug' %}">
+	{% placeholder 'content_tab' %}
+</div>

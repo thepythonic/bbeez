@@ -1,0 +1,261 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*our custom style*/
+@font-face {
+	font-family: 'cartoon';
+	src:url(../fonts/Cartoon_Regular.ttf)  format('truetype'); /* Safari, Android, iOS */
+}
+body{
+	margin:auto;
+	font-family: arial;
+	font-size: 14px;
+	line-height: 20px;
+	color: #220f47;
+	background-color: #ffffff;
+}
+.container-fluid {
+	padding-right: 20px;
+	padding-left: 20px;
+	*zoom: 1;
+	max-width: 1024px;
+	margin: auto;
+}
+
+#bodyBg {
+	background-image:url(../img/bg.jpg);
+	width: 100%;
+	margin-top: -24px;
+}
+
+/*container*/
+.container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    width: 1024px;
+}
+/*container end*/	  
+	  
+.bg{
+	background: #393678;
+	width:100%;
+	min-width: 1024px;
+}
+#kidsarea{
+	float:right;
+}
+.social{
+	display: inline;
+}
+#logo {
+	float: left;
+	margin-top: 10px;
+	margin-left:-90px;
+}
+img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+p{
+	text-align: justify;
+	margin: 15px;
+	color: #393678;
+}
+
+#language {
+	float: right;
+	margin-right: 20px;
+	margin-top: 15px;
+	color: #FFE800;
+}
+
+.header ,.header a{
+	font-weight: bold;
+	font-size: 12px;
+	cursor: pointer;
+	padding-right: 1px;
+	 color: #ffe800;
+}
+.header a:hover{
+	 color: #fff;
+}	  
+
+
+/*nav*/
+.navbar .nav > li {
+  float: left;
+}
+
+.navbar .nav > li > a {
+  float: none;
+  padding: 0px 10px 0px 15px;
+  color:#FFE800;
+  text-decoration: none;
+  font-family: cartoon;
+  font-size: 16px;
+  text-shadow:none;
+}
+
+.navbar .nav .dropdown-toggle .caret {
+  margin-top: 8px;
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color:transparent;
+  -webkit-box-shadow:none;
+     -moz-box-shadow:none;
+          box-shadow:none;
+}
+/*nav end*/
+
+
+
+a{
+	cursor:pointer;
+}
+h1, h2, h1 small, h2 small{
+	font-family: cartoon;
+	color: #FFE800;
+	background: #393678;
+	height: 30px;
+	padding-top: 10px;
+	vertical-align : top;
+}
+h2{
+	text-align:center;
+}
+h2 small{
+		padding: 0px 45px;
+}
+h4, h5{
+	text-align:center;
+	font-weight:normal;
+}
+h1 small {
+  font-size: 24px;
+  padding: 0 25px;
+}
+.row-fluid .span12 {
+	width: 100%;
+	margin-left: 0;
+}
+.up60{
+	margin-top: 60px;
+}
+.up60_play{
+	margin-top: 20px;
+}
+
+/*footer*/
+#footer  td{
+	padding: 10px;
+}
+#footer  p{
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	margin:0;
+}
+#footer  a{
+	font-size:12px;
+	font-weight:bold;
+}
+#footer  a:hover {
+	color: #F10303;
+}
+.form-inline{
+	margin:auto auto 20px 355px;
+}
+#footer a{
+	color: #0088CC;
+}
+/*end of footer*/
+
+/*plan page*/
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  color: #FF3;
+  cursor: default;
+  background-color: #383578;
+  border: 1px solid #383578;
+  border-bottom-color: transparent;
+  font-family: "Cartoon Regular";
+  font-size:16px;
+}
+.nav-tabs > li > a {
+	color: #383578;
+  	cursor: default;
+  	background-color: #febf00;
+  	border: 1px solid #febf00;
+  	border-bottom-color: transparent;
+ 	font-family: "Cartoon Regular";
+  	font-size:16px;
+}
+.nav-tabs > li > a:hover {
+	color: #ff3;
+  	cursor: default;
+  	background-color: #383578;
+  	border: 1px solid #383578;
+  	border-bottom-color: transparent;
+ 	font-family: "Cartoon Regular";
+  	font-size:16px;
+}
+.plan_main_img{
+	border:5px solid;
+	border-color:#393678;
+	margin-left:5px;
+	margin-top:10px;
+	width: 1004px;
+	height: 232px;
+}
+.play_main_img{
+	border:5px solid;
+	border-color:#393678;
+	margin-left:-3px;
+	margin-top:10px;
+}
+.offset3 {
+	margin:20px 10px 40px 10px;
+	width: auto;
+}
+.font_style {
+	font-family: "Cartoon";
+	font-size:18px;
+	color:#383578;
+}	
+.titles {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color: #383578;
+}	
+/*end of plan page*/
+
+
+/*play page*/
+.play1_img{
+	margin-top:9px;
+}
+.span3 {
+    width: 270px;
+}
+.playsmall_img{
+	margin-top:9px;
+} 
+.plan_main_img .play_main_img img{
+	margin: 0;	
+}
+/*end of play page*/
