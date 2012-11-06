@@ -29,6 +29,10 @@ SUBJECT_CHOICHES = (
     ('Complaint', 'Complaint'),
 )
 
+CMS_PLUGIN_PROCESSORS = (
+    'cmsplugin_wrapper.plugin_processors.wrap_plugin',
+)
+
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
     ('template_1.txt', 'template_1'),
@@ -188,11 +192,11 @@ INSTALLED_APPS = (
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
 
-    'cmsplugin_gallery',
-
     # Our Custom plugins
     'cmsplugin_bootstrap_carousel',     # CarouselPlugin
     'cmsplugin_titledplugin',           # TitledPlugin
+    'cmsplugin_gallery',                # CMSGalleryPlugin
+    #'cmsplugin_billybeezgames',         # BillybeezGamePlugin
     'cmsplugin_contact',                # ContactPlugin
     'cmsplugin_wrapper',                # CMSWrapperPlugin
     'cmsplugin_nivoslider',             # CMSSliderPlugin
@@ -202,6 +206,10 @@ INSTALLED_APPS = (
 
 CMS_TEMPLATES = (
     ('home.html', 'Home'),
+    ('main.html', 'Main'),
+    ('plan.html', 'Plan'),
+    ('play.html', 'Play'),
+    ('tab.html', 'Tab'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
