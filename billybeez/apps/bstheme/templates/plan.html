@@ -17,7 +17,7 @@
 <!--tabs group section -->
 <center>
 <div class="tabbable span9 offset3 tabs-widget">
-    <ul class="nav nav-tabs" id="tablist" style="text-align: center;margin-bottom: 2px;">
+    <ul class="nav nav-tabs" id="tablist">
         {% for tab in request.current_page.children.all %}
             <li>
                 <a href="#tab-{{ tab.get_slug }}" link="{{ tab.get_absolute_url }}" id="{{ tab.get_slug }}" data-toggle="tab">{{ tab.get_title }}</a>
