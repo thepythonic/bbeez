@@ -10,15 +10,10 @@
     <meta name="author" content="">
 
     {% get_current_language_bidi as LANGUAGE_BIDI %}
-    {% if LANGUAGE_BIDI %}
-      {% addtoblock "css" %}<link href="/static/css/rtl-bootstrap.css" rel="stylesheet">{% endaddtoblock %}
-      {% addtoblock "css" %}<link href="/static/css/rtl-bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
-      {% addtoblock "css" %}<link href="/static/css/rtl-style.css" rel="stylesheet">{% endaddtoblock %}
-    {% else %}
-      {% addtoblock "css" %}<link href="/static/css/bootstrap.css" rel="stylesheet">{% endaddtoblock %}
-      {% addtoblock "css" %}<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
-      {% addtoblock "css" %}<link href="/static/css/style.css" rel="stylesheet">{% endaddtoblock %}
-    {% endif %}
+
+    {% addtoblock "css" %}<link href="/static/css/{% if LANGUAGE_BIDI %}rtl-{% endif %}bootstrap.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/{% if LANGUAGE_BIDI %}rtl-{% endif %}bootstrap-responsive.css" rel="stylesheet">{% endaddtoblock %}
+    {% addtoblock "css" %}<link href="/static/css/{% if LANGUAGE_BIDI %}rtl-{% endif %}style.css" rel="stylesheet">{% endaddtoblock %}
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     {% addtoblock "js" %}

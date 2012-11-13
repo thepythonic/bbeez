@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     url(r'^', include('cms.urls')),
 )
 
+handler404 = 'billybeez.views.billybeez_404_view'
+handler500 = 'billybeez.views.billybeez_500_view'
+
 if settings.DEBUG:
     urlpatterns = patterns('',
     	url(r'^media/(?P<path>.*)$', 'django.views.static.serve',

@@ -35,17 +35,16 @@ CMS_PLUGIN_PROCESSORS = (
 
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
-    ('template_1.txt', 'template_1'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_PATH, 'dev.db'),                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'billybeez_dev',      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'scitecs',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -125,10 +124,9 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-
 )
 #MULTIHOST_AUTO_WWW = False
-#MULTIHOST_REDIRECT_URL = '/'
+MULTIHOST_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'billybeez.urls'
 
@@ -171,18 +169,16 @@ INSTALLED_APPS = (
     'sekizai', 
 
     # 'cms.plugins.file',
-    'cms.plugins.flash',
-    'cms.plugins.googlemap',
-    'cms.plugins.link',
+    'cms.plugins.flash',                # FlashPlugin
+    'cms.plugins.googlemap',            # GoogleMapPlugin
+    'cms.plugins.link',                 # LinkPlugin
     # 'cms.plugins.picture',
-    'cms.plugins.snippet',
+    'cms.plugins.snippet',              # SnippetPlugin
     # 'cms.plugins.teaser',
-    'cms.plugins.text',
+    'cms.plugins.text',                 # TextPlugin
     # 'cms.plugins.video',
-    'cms.plugins.twitter',
+    'cms.plugins.twitter',              # TwitterSearchPlugin
     
-    'cmsplugin_text_variable_width',
-
     'easy_thumbnails',
 
     'filer',
@@ -193,6 +189,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_video',
 
     # Our Custom plugins
+    'cmsplugin_text_variable_width',    # CMSTextVariableWidth
     'cmsplugin_bootstrap_carousel',     # CarouselPlugin
     'cmsplugin_titledplugin',           # TitledPlugin
     'cmsplugin_gallery',                # CMSGalleryPlugin
@@ -207,8 +204,10 @@ INSTALLED_APPS = (
 CMS_TEMPLATES = (
     ('main.html', 'Home'),
     ('plan.html', 'Plan your visit'),
-    ('play.html', 'Playground'),
+    ('play.html', 'Playgrounds'),
     ('tab.html', 'Tab Template'),
+    ('contact.html', 'Contact Us'),
+    ('general.html', 'General Template'),
 )
 
 #http://django-filer.readthedocs.org/en/latest/installation.html#subject-location-aware-cropping
@@ -263,9 +262,37 @@ CMS_PLACEHOLDER_CONF = {
         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin', 'Custom_Calendar'],
         'name':gettext("Content Center"),
     },
-    'content_bottom': {
-        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin'],
-        'name':gettext("Content Bottom"),
+    'block_left': {
+        'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
+        'name':gettext("Content Left"),
+    },
+    'block_middle': {
+        'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
+        'name':gettext("Content Middle"),
+    },
+    'block_right': {
+        'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
+        'name':gettext("Content Right"),
+    },
+    'content_tab': {
+        'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin', 'CMSWrapperPlugin'],
+        'name':gettext("Content Tab"),
+    },
+    'content_playground': {
+        'plugins': ['CMSTextVariableWidth', 'CMSGalleryPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSWrapperPlugin'],
+        'name':gettext("Content Playground"),
+    },
+    'google_map': {
+        'plugins': ['GoogleMapPlugin'],
+        'name':gettext("Contect Site Map"),
+    },
+    'site_info': {
+        'plugins': ['CMSTextVariableWidth'],
+        'name':gettext("Contect Site Info"),
+    },
+    'contact_form': {
+        'plugins': ['ContactPlugin'],
+        'name':gettext("Contact Us"),
     },
 }
 
