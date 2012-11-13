@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n cms_tags %}
+
+{% block content %}
+	<div class="row-fluid Google-Map">
+    	<div id="whiteBg" class="container">
+            <div>
+            	{% placeholder 'google_map' %}
+            </div>
+    	</div>
+	</div> <!-- end of Google-Map -->
+		
+	<div class="row-fluid" data-original-title="">
+		<div class="span12">
+			<h1><small>{% trans "Contact Us" %}</small></h1>
+		</div>
+	</div>
+
+	<!-- contact us form -->
+    <div class="row-fluid">
+		<div class="span4 site-info offset1" data-original-title="">
+            {% placeholder 'site_info' %}
+		</div>
+
+		<div class="span6" data-original-title="">
+			<div class="span12 contact-us">
+                {% placeholder 'contact_form' %}
+			</div> <!-- end of contact-us -->
+		</div>
+   	</div>
+    <!-- end of contact us form -->
+{% endblock %}
