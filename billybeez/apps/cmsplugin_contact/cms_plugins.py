@@ -57,7 +57,6 @@ class ContactPlugin(CMSPluginBase):
         TextPluginForm.declared_fields["thanks"] = CharField(widget=widget, required=False, label=thanks_field.label, help_text=thanks_field.help_text)
         return TextPluginForm
 
-
     def get_form(self, request, obj=None, **kwargs):
         plugins = plugin_pool.get_text_enabled_plugins(self.placeholder, self.page)
         form = self.get_form_class(request, plugins)
@@ -69,7 +68,6 @@ class ContactPlugin(CMSPluginBase):
             AkismetContactForm.aksimet_api_key = instance.akismet_api_key
             class ContactForm(self.contact_form, AkismetContactForm):
                 pass
-            FormClass = ContactForm
         elif instance.get_spam_protection_method_display() == 'ReCAPTCHA':
             RecaptchaContactForm.recaptcha_public_key = getattr(
                 settings, "RECAPTCHA_PUBLIC_KEY",
@@ -80,17 +78,16 @@ class ContactPlugin(CMSPluginBase):
             RecaptchaContactForm.recaptcha_theme = instance.recaptcha_theme
             class ContactForm(self.contact_form, RecaptchaContactForm):
                 pass
-            FormClass = ContactForm
         else:
             class ContactForm(self.contact_form, HoneyPotContactForm):
                 pass
-            FormClass = ContactForm
+            
+        FormClass = ContactForm
             
         if request.method == "POST":
             return FormClass(request, data=request.POST)
         else:
             return FormClass(request)
-
 
     def send(self, form, site_email):
         subject = form.cleaned_data['subject']
@@ -123,9 +120,7 @@ class ContactPlugin(CMSPluginBase):
     
     def render(self, context, instance, placeholder):
         request = context['request']
-
         form = self.create_form(instance, request)
-    
         if request.method == "POST" and form.is_valid():
             self.send(form, instance.site_email)
             context.update( {
@@ -136,7 +131,6 @@ class ContactPlugin(CMSPluginBase):
                 'contact': instance,
                 'form': form,
             })
-            
         return context
 
     def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
@@ -145,8 +139,6 @@ class ContactPlugin(CMSPluginBase):
             'recaptcha_settings': hasattr(settings, "RECAPTCHA_PUBLIC_KEY"),
             'akismet_settings': hasattr(settings, "AKISMET_API_KEY"),
         })
-        
         return super(ContactPlugin, self).render_change_form(request, context, add, change, form_url, obj)
         
-    
 plugin_pool.register_plugin(ContactPlugin)

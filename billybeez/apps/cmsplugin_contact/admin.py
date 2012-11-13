@@ -49,7 +49,6 @@ class ContactAdminForm(ModelForm):
                 if not ak.verify_key():
                     add_error(_('The API Key is not valid.'))
                    
-    
     def _check_recaptcha(self):
             
         try:
@@ -66,10 +65,8 @@ class ContactAdminForm(ModelForm):
             self._add_error('recaptcha_public_key', Field.default_error_messages['required'])
         if not private_key:
             self._add_error('recaptcha_private_key', Field.default_error_messages['required'])
-            
     
     def clean(self):
-        
         method = self.cleaned_data['spam_protection_method']
         if method == 1:
             # user chose aksimet => akismet api key is required
@@ -77,7 +74,6 @@ class ContactAdminForm(ModelForm):
         elif method == 2:
             # user chose recaptcha => recaptcha keys are required
             self._check_recaptcha()
-        
         return self.cleaned_data
 
 

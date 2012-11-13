@@ -36,7 +36,7 @@ class BaseContact(CMSPlugin):
     submit = models.CharField(_('Submit button value'),
                               default=_('Submit'), max_length=30)
     reset = models.CharField(_('Reset button value'),
-                              default=_('RESET'), max_length=30)
+                              default=_('Reset'), max_length=30)
 
     spam_protection_method = models.SmallIntegerField(
         verbose_name=_('Spam protection method'),

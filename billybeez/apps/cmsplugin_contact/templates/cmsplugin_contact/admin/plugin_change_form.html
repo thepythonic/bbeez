@@ -1,38 +1,37 @@
 {% extends "admin/cms/page/plugin_change_form.html" %}
 
 {% block extrahead %}{{ block.super }}
-<script type="text/javascript">
-//<![CDATA[
-(function($) {
-	function updateVisibility(class_prefix) {
-		$('div.spam_protection_method').parent().children('.form-row').each(function(index, row) {
-			var visible = false;
-			$.each($(row).attr('class').split(/\s+/), function(index, klass) {
-				if (klass == 'spam_protection_method' || (klass.indexOf(class_prefix) >= 0
-					{% if recaptcha_settings %} && klass.indexOf("recaptcha_public_key") < 0 && klass.indexOf("recaptcha_private_key") < 0{% endif %}
-					{% if akismet_settings %} && klass.indexOf("akismet_api_key") < 0{% endif %})) {
-					visible = true;
+	<script type="text/javascript">
+	//<![CDATA[
+	(function($) {
+		function updateVisibility(class_prefix) {
+			$('div.spam_protection_method').parent().children('.form-row').each(function(index, row) {
+				var visible = false;
+				$.each($(row).attr('class').split(/\s+/), function(index, klass) {
+					if (klass == 'spam_protection_method' || (klass.indexOf(class_prefix) >= 0
+						{% if recaptcha_settings %} && klass.indexOf("recaptcha_public_key") < 0 && klass.indexOf("recaptcha_private_key") < 0{% endif %}
+						{% if akismet_settings %} && klass.indexOf("akismet_api_key") < 0{% endif %})) {
+						visible = true;
+					}
+				});
+				if (visible) {
+					$(row).css('display', 'block');
+				} else {
+					$(row).css('display', 'none');
 				}
 			});
-			if (visible) {
-				$(row).css('display', 'block');
-			} else {
-				$(row).css('display', 'none');
-			}
-		});
-	}
-	
-	$(document).ready(function(){
+		}
 		
-		$('#id_spam_protection_method').change(function() {
-			var curOption = $('#id_spam_protection_method :selected');
-			updateVisibility(curOption.html().toLowerCase());
+		$(document).ready(function(){
+			
+			$('#id_spam_protection_method').change(function() {
+				var curOption = $('#id_spam_protection_method :selected');
+				updateVisibility(curOption.html().toLowerCase());
+			});
 		});
-	});
-})(jQuery);
-//]]>
-</script>
-
+	})(jQuery);
+	//]]>
+	</script>
 {% endblock extrahead %}
 
 {% block extrastyle %}{{ block.super }}
