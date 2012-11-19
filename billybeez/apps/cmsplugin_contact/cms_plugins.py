@@ -12,6 +12,14 @@ from models import Contact
 from forms import ContactForm, AkismetContactForm, RecaptchaContactForm, HoneyPotContactForm
 from admin import ContactAdminForm
 
+SEND_TO = {
+    #'subject' : 'e_mail@sendto.com'
+    'Question': 'Billybeeztest@scitecs.com',
+    'Business proposal': 'Billybeeztest@scitecs.com',
+    'Advertising': 'Billybeeztest@scitecs.com',
+    'Complaint': 'Billybeeztest@scitecs.com',
+}
+
 class ContactPlugin(CMSPluginBase):
     model = Contact
     name = _("Contact Form")
@@ -96,7 +104,7 @@ class ContactPlugin(CMSPluginBase):
         email_message = EmailMessage(
             # The subject line of the e-mail
             render_to_string(self.subject_template, {
-                'suject_prefix': '[Billy Beez Info]',
+                'suject_prefix': '[Billy Beez Contact Us Form]',
                 'subject': subject,
             }).splitlines()[0],
             # The body text. This should be a plain text message.
@@ -110,6 +118,9 @@ class ContactPlugin(CMSPluginBase):
             # forms are legal. If omitted, the DEFAULT_FROM_EMAIL setting is used.
             form.cleaned_data['email'],
             # to: A list or tuple of recipient addresses
+            # if subject in SEND_TO:
+            #   [SEND_TO[subject]]
+            # else:
             [site_email],
             # bcc: A list or tuple of addresses used in the "Bcc" header when sending the e-mail.
             # A dictionary of extra headers to put on the message. The keys are the header name, values are the header values

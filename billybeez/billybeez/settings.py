@@ -4,20 +4,20 @@ import os
 
 gettext = lambda s: s
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+   ('Test', 'Billybeeztest@scitecs.com'),
 )
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'scitecs123456'
 # TODO YF change email settings
-EMAIL_HOST_USER = 'yomna.fahmy@scitecs.com'
+EMAIL_HOST_USER = 'Billybeeztest@scitecs.com'
 EMAIL_SUBJECT_PREFIX = 'billybeez - '
 EMAIL_USE_TLS = True
 
@@ -35,6 +35,10 @@ CMS_PLUGIN_PROCESSORS = (
 
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
+)
+
+FIXTURE_DIRS = (
+   #os.path.join(PROJECT_PATH, 'fixtures')
 )
 
 MANAGERS = ADMINS
@@ -99,6 +103,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -256,43 +261,51 @@ CMS_SEO_FIELDS = True
 CMS_PLACEHOLDER_CONF = {
     'content_top': {
         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'CarouselPlugin', 'CMSWrapperPlugin'],
-        'name':gettext("Content Top"),
+        'name':gettext("Homepage Slider"),
     },
     'content_center': {
         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'CMSGalleryPlugin', 'Custom_Calendar'],
-        'name':gettext("Content Center"),
+        'name':gettext("Welcome Box"),
     },
     'block_left': {
         'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
-        'name':gettext("Content Left"),
+        'name':gettext("Left Block"),
     },
     'block_middle': {
         'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
-        'name':gettext("Content Middle"),
+        'name':gettext("Middle Block"),
     },
     'block_right': {
         'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
-        'name':gettext("Content Right"),
+        'name':gettext("Right Block"),
+    },
+    'banner': {
+        'plugins': ['FilerImagePlugin'],
+        'name':gettext("Banner"),
+    },
+    'text_box': {
+        'plugins': ['CMSTextVariableWidth', 'TitledPlugin'],
+        'name':gettext("Textbox"),
     },
     'content_tab': {
         'plugins': ['CMSTextVariableWidth', 'FilerImagePlugin', 'TitledPlugin', 'ContactPlugin', 'CMSWrapperPlugin'],
-        'name':gettext("Content Tab"),
+        'name':gettext("Main Content"),
     },
     'content_playground': {
         'plugins': ['CMSTextVariableWidth', 'CMSGalleryPlugin', 'FilerImagePlugin', 'TitledPlugin', 'CMSWrapperPlugin'],
-        'name':gettext("Content Playground"),
+        'name':gettext("Playground Games Block"),
     },
     'google_map': {
         'plugins': ['GoogleMapPlugin'],
-        'name':gettext("Contect Site Map"),
+        'name':gettext("Site Map Block"),
     },
     'site_info': {
         'plugins': ['CMSTextVariableWidth'],
-        'name':gettext("Contect Site Info"),
+        'name':gettext("Site Info Block"),
     },
     'contact_form': {
         'plugins': ['ContactPlugin'],
-        'name':gettext("Contact Us"),
+        'name':gettext("Contact Us Form Block"),
     },
 }
 
