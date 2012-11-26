@@ -23,7 +23,6 @@
 		}
 		
 		$(document).ready(function(){
-			
 			$('#id_spam_protection_method').change(function() {
 				var curOption = $('#id_spam_protection_method :selected');
 				updateVisibility(curOption.html().toLowerCase());
@@ -35,31 +34,16 @@
 {% endblock extrahead %}
 
 {% block extrastyle %}{{ block.super }}
-<style type="text/css">
-	div.form-row label {
-		width: 14em;
-	}
-	form .aligned p.help {
-		padding-left: 48px;
-		margin-left: 13em;
-	}
-	
-	{% if spam_protection_method != 1 or akismet_settings %}
-	div.form-row.akismet_api_key {
-		display: none;
-	}
-	{% endif %}
-
-	{% if spam_protection_method != 2 or recaptcha_settings %}
-	div.form-row.recaptcha_public_key {
-		display: none;
-	}
-	div.form-row.recaptcha_private_key {
-		display: none;
-	}
-	div.form-row.recaptcha_theme {
-		display: none;
-	}
-	{% endif %}
-</style>
+	<style type="text/css">
+		div.form-row label { width: 14em; }
+		form .aligned p.help { padding-left: 48px; margin-left: 13em; }
+		{% if spam_protection_method != 1 or akismet_settings %}
+			div.form-row.akismet_api_key { display: none; }
+		{% endif %}
+		{% if spam_protection_method != 2 or recaptcha_settings %}
+			div.form-row.recaptcha_public_key { display: none; }
+			div.form-row.recaptcha_private_key { display: none; }
+			div.form-row.recaptcha_theme { display: none; }
+		{% endif %}
+	</style>
 {% endblock extrastyle %}

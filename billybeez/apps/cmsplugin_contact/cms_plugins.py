@@ -41,10 +41,7 @@ class ContactPlugin(CMSPluginBase):
     change_form_template = "cmsplugin_contact/admin/plugin_change_form.html"
 
     def get_editor_widget(self, request, plugins):
-        """
-        Returns the Django form Widget to be used for
-        the text area
-        """
+        """ Returns the Django form Widget to be used for the text area """
         if USE_TINYMCE and "tinymce" in settings.INSTALLED_APPS:
             from cms.plugins.text.widgets.tinymce_widget import TinyMCEEditor
             return TinyMCEEditor(installed_plugins=plugins)
@@ -52,16 +49,12 @@ class ContactPlugin(CMSPluginBase):
             return WYMEditor(installed_plugins=plugins)
 
     def get_form_class(self, request, plugins):
-        """
-        Returns a subclass of Form to be used by this plugin
-        """
+        """ Returns a subclass of Form to be used by this plugin """
         # We avoid mutating the Form declared above by subclassing
         class TextPluginForm(self.form):
             pass
         widget = self.get_editor_widget(request, plugins)
-        
         thanks_field = self.form.base_fields['thanks']
-        
         TextPluginForm.declared_fields["thanks"] = CharField(widget=widget, required=False, label=thanks_field.label, help_text=thanks_field.help_text)
         return TextPluginForm
 
@@ -98,13 +91,17 @@ class ContactPlugin(CMSPluginBase):
             return FormClass(request)
 
     def send(self, form, site_email):
+        send_to = [site_email]
         subject = form.cleaned_data['subject']
-        if not subject:
+        if subject == '-Choose-':
             subject = _('No subject')
+        if subject in SEND_TO:
+            send_to = SEND_TO[subject]
+
         email_message = EmailMessage(
             # The subject line of the e-mail
             render_to_string(self.subject_template, {
-                'suject_prefix': '[Billy Beez Contact Us Form]',
+                'suject_prefix': settings.CONTACT_US_SUBJECT_PREFIX,
                 'subject': subject,
             }).splitlines()[0],
             # The body text. This should be a plain text message.
@@ -118,10 +115,7 @@ class ContactPlugin(CMSPluginBase):
             # forms are legal. If omitted, the DEFAULT_FROM_EMAIL setting is used.
             form.cleaned_data['email'],
             # to: A list or tuple of recipient addresses
-            # if subject in SEND_TO:
-            #   [SEND_TO[subject]]
-            # else:
-            [site_email],
+            send_to,
             # bcc: A list or tuple of addresses used in the "Bcc" header when sending the e-mail.
             # A dictionary of extra headers to put on the message. The keys are the header name, values are the header values
             headers = {

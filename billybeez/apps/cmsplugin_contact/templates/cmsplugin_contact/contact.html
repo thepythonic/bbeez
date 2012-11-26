@@ -6,10 +6,31 @@
 
 {% if form %}
 	<form class="form-horizontal" action="." method="post">
+<!-- 	{% for field in form %}
+			{% if not forloop.last %}
+			    <div class="control-group">
+			    	{% if form.field.errors %}<p class="error"></p>{% endif %}
+			        <label class="control-label" for="{{ field.label }}" >
+			        	{{ contact.name_label }}
+			        	{% if field.field.required %}<span class="required_class">*</span>{% endif %}
+			        </label>
+			        <div class="controls">
+						{{ field }}
+						{% if form.field.errors %}
+							{% for error in form.field.errors %}
+								<span class="error_msg">{{ error }}</span>
+							{% endfor %}
+						{% endif %}
+			        </div>
+			    </div>
+		    {% endif %}
+		{% endfor %} -->
+
 		<!-- Name -->
 	    <div class="control-group">
 	    	{% if form.name.errors %}<p class="error"></p>{% endif %}
-	        <label class="control-label" for="name">{{ contact.name_label }}</label>
+	        <label class="control-label" for="name">{{ contact.name_label }}
+	        	<span class="required_class">*</span></label>
 	        <div class="controls">
 				{{ form.name }}
 				{% if form.name.errors %}
@@ -17,12 +38,14 @@
 						<span class="error_msg">{{ error }}</span>
 					{% endfor %}
 				{% endif %}
+				{% if form.name.name.required %} <span>*</span> {% endif %}
 	        </div>
 	    </div>
 		<!-- Email -->
 	    <div class="control-group">
 	    	{% if form.email.errors %}<p class="error"></p>{% endif %}
-	        <label class="control-label" for="email">{{ contact.email_label }}</label>
+	        <label class="control-label" for="email">{{ contact.email_label }}
+	        	<span class="required_class">*</span></label>
 	        <div class="controls">
 				{{ form.email }}
 				{% if form.email.errors %}
@@ -61,7 +84,8 @@
 	    <!-- Message -->
 	    <div class="control-group">
 	    	{% if form.content.errors %}<p class="error"></p>{% endif %}
-	        <label class="control-label" for="content">{{ contact.content_label }}</label>
+	        <label class="control-label" for="content">{{ contact.content_label }}
+	        	<span class="required_class">*</span></label>
 	        <div class="controls">
 				{{ form.content }}
 				{% if form.content.errors %}
