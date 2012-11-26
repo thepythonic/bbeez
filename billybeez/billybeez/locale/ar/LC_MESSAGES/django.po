@@ -1,0 +1,493 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-20 12:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
+
+#: apps/bstheme/templates/contact.html:15
+msgid "Contact Us"
+msgstr ""
+
+#: apps/bstheme/templates/main.html:36
+msgid "Subscribe to our Newsletter"
+msgstr ""
+
+#: apps/bstheme/templates/main.html:39
+msgid "Subscribe"
+msgstr "سجل"
+
+#: apps/cmsplugin_bootstrap_carousel/cms_plugins.py:10
+msgid "Carousel"
+msgstr ""
+
+#: apps/cmsplugin_bootstrap_carousel/models.py:16
+msgid "Domid"
+msgstr ""
+
+#: apps/cmsplugin_bootstrap_carousel/models.py:17
+msgid "Interval"
+msgstr ""
+
+#: apps/cmsplugin_bootstrap_carousel/models.py:18
+#: apps/cmsplugin_nivoslider/models.py:43
+msgid "album"
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:16
+msgid "Akismet API Key"
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:16
+msgid "Get a Wordpress Key from http://akismet.com/"
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:17
+msgid "ReCAPTCHA Public Key"
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:17 apps/cmsplugin_contact/admin.py:18
+msgid "Get this from http://www.google.com/recaptcha"
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:18
+msgid "ReCAPTCHA Private Key"
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:35
+msgid ""
+"Akismet library is not installed. Use \"easy_install akismet\" or \"pip "
+"install akismet\"."
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:49
+msgid "The API Key is not valid."
+msgstr ""
+
+#: apps/cmsplugin_contact/admin.py:56
+msgid ""
+"ReCAPTCHA library is not installed. Use \"easy_install recaptcha-client\" or "
+"\"pip install recaptcha-client\"."
+msgstr ""
+
+#: apps/cmsplugin_contact/cms_plugins.py:25
+msgid "Contact Form"
+msgstr ""
+
+#: apps/cmsplugin_contact/cms_plugins.py:36
+msgid "Spam Protection"
+msgstr ""
+
+#: apps/cmsplugin_contact/cms_plugins.py:99
+msgid "No subject"
+msgstr ""
+
+#: apps/cmsplugin_contact/forms.py:9
+msgid "Name"
+msgstr "الإسم"
+
+#: apps/cmsplugin_contact/forms.py:10
+msgid "Email"
+msgstr ""
+
+#: apps/cmsplugin_contact/forms.py:11
+msgid "Mobile"
+msgstr "موبايل"
+
+#: apps/cmsplugin_contact/models.py:21
+msgid "Default email recipient"
+msgstr "أسم المستقبل"
+
+#: apps/cmsplugin_contact/models.py:21
+msgid "Email to recieve the sent emails"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:23
+msgid "User Name"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:24
+msgid "Label for the user name input field"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:26
+msgid "Email sender label"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:26
+msgid "E-MAIL"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:27
+msgid "Label for the user email input field"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:29
+msgid "User Mobile Phone"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:30
+msgid "Label for the user mobile input field"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:32
+msgid "Subject label"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:32
+msgid "SUBJECT"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:33
+msgid "Label for the email subject select options"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:35
+msgid "Message content label"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:35
+msgid "MESSAGE"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:36
+msgid "Label for the email message content field"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:38
+msgid "Thanks message"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:38
+msgid "Thank you for your message."
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:39
+msgid "Message displayed on successful submit"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:41
+msgid "Submit button value"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:41
+msgid "Submit"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:42
+msgid "Value to display on the submit button"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:44
+msgid "Reset button value"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:44
+msgid "Reset"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:45
+msgid "Value to display on the reset button"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:47
+msgid "Spam protection method"
+msgstr ""
+
+#: apps/cmsplugin_contact/models.py:55
+msgid "ReCAPTCHA theme"
+msgstr ""
+
+#: apps/cmsplugin_contact/nospam/fields.py:13
+msgid "Please don't check this box."
+msgstr ""
+
+#: apps/cmsplugin_contact/nospam/forms.py:42
+msgid "Please enter the two words on the image separated by a space:"
+msgstr ""
+
+#: apps/cmsplugin_contact/nospam/forms.py:44
+msgid "You did not enter any of the words."
+msgstr ""
+
+#: apps/cmsplugin_contact/nospam/forms.py:92
+msgid "You did not enter the two words shown in the image."
+msgstr ""
+
+#: apps/cmsplugin_contact/nospam/forms.py:98
+msgid "The words you entered did not match the image."
+msgstr ""
+
+#: apps/cmsplugin_contact/nospam/widgets.py:30
+msgid "Are you a robot?"
+msgstr ""
+
+#: apps/cmsplugin_gallery/cms_plugins.py:13
+msgid "Image gallery"
+msgstr ""
+
+#: apps/cmsplugin_gallery/forms.py:13
+msgid "Change:"
+msgstr ""
+
+#: apps/cmsplugin_gallery/models.py:33
+#, python-format
+msgid "%(count)d image(s) in gallery"
+msgstr ""
+
+#: apps/cmsplugin_gallery/models.py:42
+msgid "Gallery"
+msgstr ""
+
+#: apps/cmsplugin_gallery/models.py:44 apps/cmsplugin_gallery/models.py:45
+msgid "Image height"
+msgstr ""
+
+#: apps/cmsplugin_gallery/models.py:46
+msgid "Title"
+msgstr ""
+
+#: apps/cmsplugin_gallery/models.py:47
+msgid "Alt text"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/cms_plugins.py:11
+msgid "Slider"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/cms_plugins.py:20
+msgid "Controls"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:42
+msgid "title"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:44
+msgid "Best image size 600x300"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:45
+msgid "theme"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:47
+msgid "effect"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:49
+msgid "manual advance"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:50
+msgid "anim speed"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:51
+msgid "Animation Speed (ms)"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:52
+msgid "pause time"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:53
+msgid "Pause time (ms)"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:54
+msgid "width"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:55
+msgid "Width of the plugin (px)"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:56
+msgid "height"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:57
+msgid "Height of the plugin (px)"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:58
+msgid "arrows"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:59
+msgid "Arrow buttons for navigation"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:60
+msgid "thumbnails"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:61
+msgid "Thumbnails for navigation [only works with the default theme!]"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:63
+msgid "random start"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/models.py:64
+msgid "pause on mouse hover"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/templates/nivo/slider.html:59
+msgid "prev"
+msgstr ""
+
+#: apps/cmsplugin_nivoslider/templates/nivo/slider.html:60
+msgid "next"
+msgstr ""
+
+#: apps/cmsplugin_text_variable_width/cms_plugins.py:13
+msgid "Text Variable Width"
+msgstr ""
+
+#: apps/cmsplugin_titledplugin/cms_plugins.py:17
+msgid "Titled Plugin"
+msgstr ""
+
+#: apps/cmsplugin_titledplugin/models.py:14 apps/custom_utils/models.py:5
+msgid "--select--"
+msgstr ""
+
+#: apps/cmsplugin_wrapper/cms_plugins.py:10
+msgid "Wrapper Plugin"
+msgstr ""
+
+#: apps/custom_calendar/cms_app.py:6
+msgid "Custom Calendar App"
+msgstr ""
+
+#: apps/custom_calendar/cms_plugins.py:14
+msgid "Custom Calendar"
+msgstr ""
+
+#: billybeez/settings.py:262
+msgid "Homepage Slider"
+msgstr ""
+
+#: billybeez/settings.py:266
+msgid "Welcome Box"
+msgstr ""
+
+#: billybeez/settings.py:270
+msgid "Left Block"
+msgstr ""
+
+#: billybeez/settings.py:274
+msgid "Middle Block"
+msgstr ""
+
+#: billybeez/settings.py:278
+msgid "Right Block"
+msgstr ""
+
+#: billybeez/settings.py:282
+msgid "Banner"
+msgstr ""
+
+#: billybeez/settings.py:286
+msgid "Textbox"
+msgstr ""
+
+#: billybeez/settings.py:290
+msgid "Main Content"
+msgstr ""
+
+#: billybeez/settings.py:294
+msgid "Playground Games Block"
+msgstr ""
+
+#: billybeez/settings.py:298
+msgid "Site Map Block"
+msgstr ""
+
+#: billybeez/settings.py:302
+msgid "Site Info Block"
+msgstr ""
+
+#: billybeez/settings.py:306
+msgid "Contact Us Form Block"
+msgstr ""
+
+#: billybeez/templates/admin/change_form.html:27
+msgid "Home"
+msgstr ""
+
+#: billybeez/templates/admin/change_form.html:30
+msgid "Add"
+msgstr ""
+
+#: billybeez/templates/admin/change_form.html:40
+msgid "History"
+msgstr ""
+
+#: billybeez/templates/admin/change_form.html:51
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:30
+msgid "Plugins"
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:38
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:106
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:69
+msgid "Please select a plugin type."
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:54
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:112
+msgid "Edit selected plugin"
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:58
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:124
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:87
+msgid "Text editor does not support editing objects."
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:63
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:129
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:92
+msgid "No object selected."
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:112
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:75
+msgid "Text editor does not support inserting objects."
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/tinymce.html:133
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:96
+msgid "Not a plugin object"
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:108
+msgid "Available Plugins"
+msgstr ""
+
+#: billybeez/templates/cms/plugins/widgets/wymeditor.html:111
+msgid "Insert plugin"
+msgstr ""

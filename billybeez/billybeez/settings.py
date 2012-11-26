@@ -21,7 +21,7 @@ EMAIL_HOST_USER = 'Billybeeztest@scitecs.com'
 EMAIL_SUBJECT_PREFIX = 'billybeez - '
 EMAIL_USE_TLS = True
 
-SUBJECT_CHOICHES = (
+CONTACT_US_SUBJECT_CHOICHES = (
     ('-Choose-', '-Choose-'),
     ('Question', 'Question'),
     ('Business proposal', 'Business proposal'),
@@ -29,16 +29,14 @@ SUBJECT_CHOICHES = (
     ('Complaint', 'Complaint'),
 )
 
+CONTACT_US_SUBJECT_PREFIX = '[Billy Beez Contact Us Form]'
+
 CMS_PLUGIN_PROCESSORS = (
     'cmsplugin_wrapper.plugin_processors.wrap_plugin',
 )
 
 WRAPPER_PLUGIN_TEMPLATES = (
     ('default.html', 'default'),
-)
-
-FIXTURE_DIRS = (
-   #os.path.join(PROJECT_PATH, 'fixtures')
 )
 
 MANAGERS = ADMINS
@@ -132,6 +130,9 @@ MIDDLEWARE_CLASSES = (
 )
 #MULTIHOST_AUTO_WWW = False
 MULTIHOST_REDIRECT_URL = '/'
+LOCALE_PATHS = (
+     os.path.join(PROJECT_PATH, 'locale'),
+)
 
 ROOT_URLCONF = 'billybeez.urls'
 
