@@ -95,7 +95,7 @@ h1 small{ font-size: 24px; padding: 0 25px; }
   background-color: #383578;
   border: 1px solid #383578;
   border-bottom-color: transparent;
-  font-family: "Cartoon Regular";
+  font-family: cartoon;
   font-size:16px;
 }
 .nav-tabs > li > a {
@@ -104,7 +104,7 @@ h1 small{ font-size: 24px; padding: 0 25px; }
   	background-color: #febf00;
   	border: 1px solid #febf00;
   	border-bottom-color: transparent;
- 	font-family: "Cartoon Regular";
+ 	font-family: cartoon;
   	font-size:16px;
 }
 .nav-tabs > li > a:hover {
@@ -113,13 +113,13 @@ h1 small{ font-size: 24px; padding: 0 25px; }
   	background-color: #383578;
   	border: 1px solid #383578;
   	border-bottom-color: transparent;
- 	font-family: "Cartoon Regular";
+ 	font-family: cartoon;
   	font-size:16px;
 }
 .plan_main_img{ border:5px solid; border-color:#393678; margin-left:5px; margin-top:10px; width: 1004px; height: 232px; }
 .play_main_img{ border:5px solid; border-color:#393678; margin-left:-3px; margin-top:10px; }
 .offset3 { margin:20px 10px 40px 10px; width: auto; }
-.font_style { font-family: "Cartoon"; font-size:18px; color:#383578; }	
+.font_style { font-family: cartoon; font-size:18px; color:#383578; }	
 .titles {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:14px;
@@ -209,9 +209,9 @@ textarea{ width: 250px;	height: 115px; }
 img.left{ margin: 10px 20px 0 0; }
 img.right{ margin: 10px 0 0 20px; }
 .text-plugin{margin-left:0;}
-.tab-pane h2{ font-family: "Cartoon"; font-size:18px; color:#383578; background: #fff; text-align: right; }
+.tab-pane h2{ font-family: cartoon; font-size:18px; color:#383578; background: #fff; text-align: right; }
 .tab-pane h4{ font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color: #383578; text-align: right; }
-.site-info h2{ font-family: "Cartoon"; font-size:18px; color:#383578; background: #fff; text-align: right; }
+.site-info h2{ font-family: cartoon; font-size:18px; color:#383578; background: #fff; text-align: right; }
 .subscribe h4{ font-family:Arial, Helvetica, sans-serif; }
 /* end of our base Custom Style */
 
@@ -224,8 +224,10 @@ img.right{ margin: 10px 0 0 20px; }
 #nav-margin80{ margin:80px 0px 0px 0px; }
 .bg-color{ background:#fff; }
 .footer-color{ background: white; }
-.follow-align{ text-align:right; }
+.follow-align{ text-align:right; font-size: 12px; font-weight: bold; }
 #googleMap{ height:250px; width:1024px; margin-top:12px; }
 .gallery-img-height{ height: 100px; }
 #tablist{ text-align: center; margin-bottom: 2px; }
+#tab-content{ min-height: 350px; }
+.controls input { height: auto; }
 /* end of our in-line Custom Styles */

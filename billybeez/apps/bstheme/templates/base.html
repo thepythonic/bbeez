@@ -79,7 +79,7 @@
     {% block header %}
       <div class="bg">
         <div class="container header-margin">
-          <img id="logo"src="{{ STATIC_URL }}img/logo.png" alt=""/>
+          <a href="{% page_url "homepage" %}"><img id="logo"src="{{ STATIC_URL }}img/logo.png" alt=""/></a>
           <div id="language" class="header">
             {% get_available_languages as languages %}
             {% for lang_code, lang_name in languages %}
@@ -89,11 +89,7 @@
               {% if not forloop.last %}  |  {% endif %}
               {% endfor %}
           </div>
-        <!--
-          <div id="language" class="header">  
-              <a class="lang-font"> عربي</a>  |   <a> English</a>
-          </div>
-        -->
+
           {% block nav-menu %}
           <div class="navbar">
             <ul class="nav" id="nav-margin80">
@@ -101,7 +97,7 @@
             </ul>
           </div>
           {% endblock nav-menu %}
-          <img id="kidsarea" src="{{ STATIC_URL }}img/kidsarea.png" alt=""/>
+          <a href=""><img id="kidsarea" src="{{ STATIC_URL }}img/kidsarea.png" alt=""/></a>
         </div>
       </div>
     {% endblock header %}
@@ -117,25 +113,27 @@
                     <img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
                     <table align="center">
                       <tr>
-                      <td><a href="">About Billy Beez</a></td><td>|</td>
-                      <td><a href="">Terms &amp; Conditions</a></td><td>|</td>
-                      <td><a href="">Privacy Policy</a></td><td>|</td>
-                      <td><a href="">Site Map</a></td><td>|</td>
-                      <td><a href="">Contact Us</a></td>
+                      <td><a href="">{% trans "About Billy Beez" %}</a></td><td>|</td>
+                      <td><a href="">{% trans "Terms &amp; Conditions" %}</a></td><td>|</td>
+                      <td><a href="">{% trans "Privacy Policy" %}</a></td><td>|</td>
+                      <td><a href="">{% trans "Site Map" %}</a></td><td>|</td>
+                      <td><a href="">{% trans "Contact Us" %}</a></td>
                       </tr>
                     </table>
-                    <p> All rights reserved 2012  Billy Beez</p>
-                    <div class="offset9">
-                    <p class="follow-align">Follow Us:</p>
-                      <a href=""><img class="social" src="{{ STATIC_URL }}img/facebook.png"/></a>
-                      <a href=""><img class="social" src="{{ STATIC_URL }}img/twitter.png"/></a>
-                      <a href=""><img class="social"src="{{ STATIC_URL }}img/youtube.png"/></a>
+                    <p> {% trans "All rights reserved 2012  Billy Beez" %}</p>
+                    <div class="offset8">
+                      <span class="follow-align">{% trans "Follow Us:" %}</span>
+                      <span>
+                        <a href=""><img class="social" src="{{ STATIC_URL }}img/facebook.png"/></a>
+                        <a href=""><img class="social" src="{{ STATIC_URL }}img/twitter.png"/></a>
+                        <a href=""><img class="social"src="{{ STATIC_URL }}img/youtube.png"/></a>
+                      </span>
                     </div>
-                  </div>
+                    <br />
                 </div>
               </div>
-            {% endblock footer %}
       </div>
+      {% endblock footer %}
     </div>
   </body>
 </html>

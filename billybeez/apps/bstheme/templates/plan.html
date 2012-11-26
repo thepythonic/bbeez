@@ -25,7 +25,7 @@
         {% endfor %}
     </ul>
     
-    <div class="span10 tab-content">
+    <div id="tab-content" class="span10 tab-content">
         {% for tab in request.current_page.children.all %}
             <div id="tab-{{ tab.get_slug }}" class="row-fluid tab-pane">
                 {% if forloop.first %}
