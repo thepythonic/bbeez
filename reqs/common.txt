@@ -5,3 +5,4 @@ cmsplugin_filer
 pillow
 django-inline-ordering
 django-tinymce
+django-rosetta

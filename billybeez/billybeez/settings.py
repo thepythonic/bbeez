@@ -121,7 +121,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     
-    'multihost.middleware.MultiHostMiddleware',
+    #'multihost.middleware.MultiHostMiddleware',
 
     'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -163,7 +163,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django.contrib.admin',
-    
+    'django.contrib.sitemaps',
     # our themes
     'bstheme',
     #'bluetheme',
@@ -193,6 +193,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_image',
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
+    'rosetta',
 
     # Our Custom plugins
     'cmsplugin_text_variable_width',    # CMSTextVariableWidth

@@ -230,4 +230,6 @@ img.right{ margin: 10px 0 0 20px; }
 #tablist{ text-align: center; margin-bottom: 2px; }
 #tab-content{ min-height: 350px; }
 .controls input { height: auto; }
+.required_class { color: red }
+.top-20 { margin-top: 20px; }
 /* end of our in-line Custom Styles */
