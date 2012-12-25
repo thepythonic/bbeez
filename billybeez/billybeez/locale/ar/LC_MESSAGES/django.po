@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-20 12:57+0200\n"
-"PO-Revision-Date: 2012-11-26 06:52\n"
+"PO-Revision-Date: 2012-12-17 02:34\n"
 "Last-Translator:   <yomna.fahmy@scitecs.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: apps/bstheme/templates/contact.html:15
 msgid "Contact Us"
-msgstr ""
+msgstr "اتصل بنا"
 
 #: apps/bstheme/templates/main.html:36
 msgid "Subscribe to our Newsletter"
