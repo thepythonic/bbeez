@@ -1,9 +1,9 @@
 import os
 import sys
 
-sys.path.append('/home/yomna/Envs/billydemo/lib/python2.7/site-packages')
-sys.path.append('/home/yomna/projects/billydemo/bbeez/billybeez/')
-sys.path.append('/home/yomna/projects/billydemo/bbeez/billybeez/apps/')
+sys.path.append('/srv/bbeez/venv/lib/python2.7/site-packages/')
+sys.path.append('/srv/bbeez/venv/bbeez/billybeez/')
+sys.path.append('/srv/bbeez/venv/bbeez/billybeez/apps/')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'billybeez.settings'
 
