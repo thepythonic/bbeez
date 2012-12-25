@@ -82,7 +82,7 @@ h1 small{ font-size: 24px; padding: 0 25px; }
 #footer  a{	font-size:12px;	font-weight:bold; }
 #footer  a:hover { color: #F10303; }
 .form-inline{ margin:auto auto 20px 355px; }
-#footer a{ color: #0088CC; }
+#footer a{ color: #393678; }
 /*end of footer*/
 
 /*plan page*/
@@ -132,6 +132,7 @@ h1 small{ font-size: 24px; padding: 0 25px; }
 .span3 { width: 270px; }
 .playsmall_img{	margin-top:9px; } 
 .plan_main_img .play_main_img img{ margin: 0; }
+.row-fluid ol{color: #393678; margin-left: 40px;}
 /*end of play page*/
 
 
