@@ -49,14 +49,14 @@ ul .social li{
 .fb{
 	width:20px;
 	height:20px;
-	background-image:url(../../Playgrounds_files/facebook.png);
+	background-image:url(../../img/facebook.png);
 	float:left;
 	list-style:none;}
 	
 .fb:hover{
 	width:20px;
 	height:20px;
-	background-image:url(../../Playgrounds_files/facebook-hover.png);
+	background-image:url(../../img/facebook-hover.png);
 	float:left;
 	list-style:none;
 	}
@@ -66,14 +66,14 @@ ul .social li{
 .tw{
 	width:20px;
 	height:20px;
-	background-image:url(../../Playgrounds_files/twitter.png);
+	background-image:url(../../img/twitter.png);
 	float:left;
 	list-style:none;}
 	
 .tw:hover{
 	width:20px;
 	height:20px;
-	background-image:url(../../Playgrounds_files/twitter-hover.png);
+	background-image:url(../../img/twitter-hover.png);
 	float:left;
 	list-style:none;
 	}
@@ -83,14 +83,14 @@ ul .social li{
 .yt{
 	width:20px;
 	height:20px;
-	background-image:url(../../Playgrounds_files/youtube.png);
+	background-image:url(../../img/youtube.png);
 	float:left;
 	list-style:none;}
 	
 .yt:hover{
 	width:20px;
 	height:20px;
-	background-image:url(../../Playgrounds_files/youtube-hover.png);
+	background-image:url(../../img/youtube-hover.png);
 	float:left;
 	list-style:none;
 	}
