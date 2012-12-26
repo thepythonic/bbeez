@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 </script>
 {% endaddtoblock %}
-<div id="{{ instance.domid }}" class="carousel slide span12">
+<div id="{{ instance.domid }}" class="carousel slide span12 plan_main_img">
   <div class="carousel-inner">{% for image in instance.images %}
     <div class="{% if forloop.first %}active {% endif %}item">
       <img alt="{{ image.image.default_alt_text}}" src="{{ image.image.url }}">
