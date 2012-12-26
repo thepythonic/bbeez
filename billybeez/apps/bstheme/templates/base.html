@@ -104,34 +104,36 @@
 
     <div id="bodyBg">
       <div class="container-fluid bg-color">
-            {% block content %}
-            {% endblock content %}
+      {% block content %}
+      {% endblock content %}
 
-            {% block footer %}  
-              <div class="bg">
-                <div class="container footer-color" id="footer">
-                    <img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
-                    <table align="center">
-                      <tr>
-                      <td><a href="">{% trans "About Billy Beez" %}</a></td><td>|</td>
-                      <td><a href="">{% trans "Terms &amp; Conditions" %}</a></td><td>|</td>
-                      <td><a href="">{% trans "Privacy Policy" %}</a></td><td>|</td>
-                      <td><a href="">{% trans "Site Map" %}</a></td><td>|</td>
-                      <td><a href="">{% trans "Contact Us" %}</a></td>
-                      </tr>
-                    </table>
-                    <p> {% trans "All rights reserved 2012  Billy Beez" %}</p>
-                    <div class="offset8">
-                      <span class="follow-align">{% trans "Follow Us:" %}</span>
-                      <span>
-                        <a href=""><img class="social" src="{{ STATIC_URL }}img/facebook.png"/></a>
-                        <a href=""><img class="social" src="{{ STATIC_URL }}img/twitter.png"/></a>
-                        <a href=""><img class="social"src="{{ STATIC_URL }}img/youtube.png"/></a>
-                      </span>
-                    </div>
-                    <br />
-                </div>
+      {% block footer %}  
+        <div class="bg">
+          <div class="container footer-color" id="footer">
+              <img align="center" src="{{ STATIC_URL }}img/separator_1.png" alt="">
+              <table align="center">
+                <tr>
+                <td><a href="">{% trans "About Billy Beez" %}</a></td><td>|</td>
+                <td><a href="">{% trans "Terms &amp; Conditions" %}</a></td><td>|</td>
+                <td><a href="">{% trans "Privacy Policy" %}</a></td><td>|</td>
+                <td><a href="">{% trans "Site Map" %}</a></td><td>|</td>
+                <td><a href="">{% trans "Contact Us" %}</a></td>
+                </tr>
+              </table>
+              <p> {% trans "All rights reserved 2012  Billy Beez" %}</p>
+              <div class="offset8">
+                <span class="follow-align">Follow Us:</span>
+                <span>
+                  <ul class="social">
+                    <li class="fb"><a href=""></a></li>
+                    <li class="tw"><a href=""></a></li>
+                    <li class="yt"><a href=""></a></li>
+                  </ul>
+                </span>
               </div>
+              <br />
+          </div>
+        </div>
       </div>
       {% endblock footer %}
     </div>
