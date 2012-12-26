@@ -188,7 +188,7 @@ textarea{ width: 250px;	height: 115px; }
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	background: #EEE;
-	border: 1px solid #333;
+	border: 1px solid #220f47;
 	font-family: arial;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -223,7 +223,7 @@ img.right{ margin: 10px 0 0 20px; }
 #nav-margin80{ margin:80px 0px 0px 0px; }
 .bg-color{ background:#fff; }
 .footer-color{ background: white; }
-.follow-align{ text-align:left; font-size: 12px; font-weight: bold; }
+.follow-align{ text-align:left; font-size: 12px; font-weight: bold; float:left;}
 #googleMap{ height:250px; width:1024px; margin-top:12px; }
 .gallery-img-height{ height: 100px; }
 #tablist{ text-align: center; margin-bottom: 2px; }
@@ -232,3 +232,63 @@ img.right{ margin: 10px 0 0 20px; }
 .required_class { color: red }
 .top-20 { margin-top: 20px; }
 /* end of our in-line Custom Styles */
+
+
+
+ul .social{
+	list-style:none;
+	float:left;
+	display:inline;}
+
+ul .social li{
+	list-style:none;
+	float:left;}
+/*facebook*/
+.fb{
+	width:20px;
+	height:20px;
+	background-image:url(/static/img/facebook.png);
+	float:left;
+	list-style:none;}
+	
+.fb:hover{
+	width:20px;
+	height:20px;
+	background-image:url(/static/img/facebook-hover.png);
+	float:left;
+	list-style:none;
+	}
+	
+/*twitter*/	
+
+.tw{
+	width:20px;
+	height:20px;
+	background-image:url(/static/img/twitter.png);
+	float:left;
+	list-style:none;}
+	
+.tw:hover{
+	width:20px;
+	height:20px;
+	background-image:url(/static/img/twitter-hover.png);
+	float:left;
+	list-style:none;
+	}
+	
+/*youtube*/	
+
+.yt{
+	width:20px;
+	height:20px;
+	background-image:url(/static/img/youtube.png);
+	float:left;
+	list-style:none;}
+	
+.yt:hover{
+	width:20px;
+	height:20px;
+	background-image:url(/static/img/youtube-hover.png);
+	float:left;
+	list-style:none;
+	}
